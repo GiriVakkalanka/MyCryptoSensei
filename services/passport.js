@@ -16,6 +16,7 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.use(
+  //proxy: true config option for redirect URI HTTPS to work
   new GoogleStrategy(
     {
       clientID: keys.googleClientID,

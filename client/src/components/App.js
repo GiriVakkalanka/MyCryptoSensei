@@ -6,6 +6,7 @@ import Landing from './Landing';
 //import Header from './Header';
 import Header from './layout/Header';
 import Drawer from './layout/Drawer';
+import TestWrapper from './layout/TestWrapper';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import LayoutTest from './layout/LayoutTest';
@@ -20,7 +21,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={TestWrapper} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import LayoutTest from './LayoutTest';
 import { Sidebar, Segment, Button, Menu, Image, Icon } from 'semantic-ui-react';
 
 class SidebarLeftSlideAlong extends Component {
@@ -8,13 +9,14 @@ class SidebarLeftSlideAlong extends Component {
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
   render() {
-    const { visible } = this.state;
+    // const { visible } = this.state;
+    // const pusher = this.props.pusher;
     return (
       <div>
         <Sidebar
           as={Menu}
           width="thin"
-          visible={visible}
+          visible={this.state.visible}
           icon={false}
           vertical
           inverted
@@ -34,15 +36,7 @@ class SidebarLeftSlideAlong extends Component {
             Channels
           </Menu.Item>
         </Sidebar>
-        <Sidebar.Pusher>
-          <Header />
-          <Button
-            style={{ marginTop: '50', marginLeft: '40' }}
-            onClick={this.toggleVisibility}
-          >
-            Toggle Visibility
-          </Button>
-        </Sidebar.Pusher>
+        <Sidebar.Pusher>{<div>{this.props.pusher}</div>}</Sidebar.Pusher>
       </div>
     );
   }

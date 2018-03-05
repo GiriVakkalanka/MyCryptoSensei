@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import LayoutTest from './LayoutTest';
 import { Sidebar, Segment, Button, Menu, Image, Icon } from 'semantic-ui-react';
 

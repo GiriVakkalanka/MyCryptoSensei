@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Landing from './Landing';
 //import Header from './Header';
-import Header from './layout/Header';
+import NavHeader from './layout/NavHeader';
 import Drawer from './layout/Drawer';
 import TestWrapper from './layout/TestWrapper';
 import Dashboard from './Dashboard';
@@ -20,7 +20,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
+            <NavHeader />
             <Route exact path="/" component={TestWrapper} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />

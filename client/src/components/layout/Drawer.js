@@ -21,7 +21,7 @@ class SidebarLeftSlideAlong extends Component {
           fixed
           animation="push"
         >
-          <Menu.Item name="home">
+          <Menu.Item name="home" onClick={this.toggleVisibility}>
             <Icon color="yellow" name="home" />
             <p style={{ color: 'yellow' }}>Home</p>
           </Menu.Item>

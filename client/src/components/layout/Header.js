@@ -15,7 +15,7 @@ class SidebarTopPush extends Component {
     return (
       <div>
         <Menu attached="top" borderless fitted visible={true} inverted>
-          <Menu.Item active={true} position="right" name="home">
+          <Menu.Item position="right" name="home">
             <Icon color="yellow" name="home" />
             <p style={{ color: 'yellow' }}>Home</p>
           </Menu.Item>

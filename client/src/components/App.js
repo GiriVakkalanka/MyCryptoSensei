@@ -8,6 +8,7 @@ import Header from './layout/Header';
 import Drawer from './layout/Drawer';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import LayoutTest from './layout/LayoutTest';
 
 class App extends Component {
   componentDidMount() {
@@ -18,8 +19,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Drawer />
-            <Route exact path="/" component={Landing} />
+            <Header />
+            <Route exact path="/" component={LayoutTest} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>

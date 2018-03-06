@@ -1,7 +1,17 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
-import { Card, Segment, Grid, Header, Icon, Sticky } from 'semantic-ui-react';
+import {
+  Card,
+  Segment,
+  Grid,
+  Header,
+  Icon,
+  Rail,
+  Sticky
+} from 'semantic-ui-react';
 import SelectServices from './SelectServices';
 import ApplySteps from './ApplySteps';
+import ServiceItem from './ServiceItem';
 
 class Apply extends Component {
   state = {};
@@ -10,7 +20,7 @@ class Apply extends Component {
   }
   handleScroll(event) {
     //console.log(event.srcElement.body.scrollHeight);
-    console.log(window.pageYOffset);
+    //console.log(window.pageYOffset);
   }
   handleContextRef = contextRef => this.setState({ contextRef });
   render() {
@@ -27,25 +37,9 @@ class Apply extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Sticky context={contextRef} pushing>
-              <ApplySteps />
-            </Sticky>
+            <ApplySteps />
           </Grid.Row>
-          <Grid.Row>
-            <SelectServices />
-          </Grid.Row>
-          <Grid.Row>
-            <SelectServices />
-          </Grid.Row>
-          <Grid.Row>
-            <SelectServices />
-          </Grid.Row>
-          <Grid.Row>
-            <SelectServices />
-          </Grid.Row>
-          <Grid.Row>
-            <SelectServices />
-          </Grid.Row>
+          <SelectServices />
         </Grid>
       </div>
     );

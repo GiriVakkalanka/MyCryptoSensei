@@ -5,45 +5,28 @@ import {
   Grid,
   Checkbox,
   Accordion,
-  Icon
+  Icon,
+  Header,
+  Button,
+  Item
 } from 'semantic-ui-react';
 
 class ServiceItem extends Component {
-  state = { activeIndex: false };
-
-  handleClick = (e, titleProps) => {
-    const { index } = titleProps;
-    const { activeIndex } = this.state;
-    const newIndex = activeIndex === index ? -1 : index;
-
-    this.setState({ activeIndex: newIndex });
-  };
-
   render() {
-    const { activeIndex } = this.state;
     return (
-      <Grid.Row>
-        <Checkbox />
+      <Item>
+        <Item.Image>
+          <Header as="h1" icon>
+            <Icon name={this.props.icon} />
+          </Header>
+        </Item.Image>
+        <Item.Content>
+          <Item.Header>{this.props.header}</Item.Header>
+          <Item.Description>{this.props.description}</Item.Description>
 
-        <Grid.Column width={4}>
-          <Accordion styled>
-            <Accordion.Title
-              active={activeIndex === 0}
-              index={0}
-              onClick={this.handleClick}
-            >
-              <Icon name="dropdown" />
-              Whitepaper analysis
-            </Accordion.Title>
-            <Accordion.Content active={activeIndex === 0}>
-              <p>
-                Help users understand the technical foundations of any given
-                coin.
-              </p>
-            </Accordion.Content>
-          </Accordion>
-        </Grid.Column>
-      </Grid.Row>
+          <Button style={{ marginTop: 10 }}>Select</Button>
+        </Item.Content>
+      </Item>
     );
   }
 }

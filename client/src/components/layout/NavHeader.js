@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LayoutTest from './LayoutTest';
+import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 
 import {
@@ -37,7 +38,7 @@ class NavHeader extends Component {
   renderApplyButton() {
     return this.props.auth ? (
       this.props.auth.sensei ? null : (
-        <Menu.Item position="right" href="/auth/google">
+        <Menu.Item as={Link} to="/apply" position="right">
           <div style={{ color: 'yellow' }}>Apply to be a Sensei</div>
           <Icon color="yellow" name="dollar" />
         </Menu.Item>

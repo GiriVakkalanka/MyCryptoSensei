@@ -10,6 +10,7 @@ import TestWrapper from './layout/TestWrapper';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import LayoutTest from './layout/LayoutTest';
+import ApplyWrapper from './apply/ApplyWrapper';
 
 class App extends Component {
   componentDidMount() {
@@ -21,9 +22,8 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <NavHeader />
-            <Route exact path="/" component={TestWrapper} />
-            <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/apply" component={ApplyWrapper} />
           </div>
         </BrowserRouter>
       </div>

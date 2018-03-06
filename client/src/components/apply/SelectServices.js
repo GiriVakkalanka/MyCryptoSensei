@@ -18,7 +18,11 @@ class SelectServices extends Component {
     return (
       <Grid container>
         <Grid.Row>
-          <Grid.Column width={10}>
+          <Grid.Column width={9}>
+            <Header as="h2">
+              Select the services that you would like to provide.
+              <Header.Subheader>Choose all that apply</Header.Subheader>
+            </Header>
             <Segment>
               <Item.Group divided>
                 <ServiceItem
@@ -34,7 +38,7 @@ class SelectServices extends Component {
                 <ServiceItem
                   header="Tax Consultation"
                   icon="calculator"
-                  description="Advise users on the tax considerations related to crypto investing."
+                  description="Advise users on the tax considerations of crypto investing."
                 />
                 <ServiceItem
                   header="Onboarding Guidance"

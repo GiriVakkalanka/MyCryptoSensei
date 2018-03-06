@@ -21,13 +21,6 @@ const steps = [
     icon: 'payment',
     title: 'Billing',
     description: 'Enter billing information'
-  },
-  {
-    key: 'runnning',
-    active: false,
-    icon: 'payment',
-    title: 'Billing',
-    description: 'Enter billing information'
   }
 ];
 

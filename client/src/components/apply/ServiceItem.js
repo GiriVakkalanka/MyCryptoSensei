@@ -10,8 +10,48 @@ import {
   Button,
   Item
 } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class ServiceItem extends Component {
+  componentDidMount() {
+    console.log(this.props.application);
+  }
+  renderButton(expertise) {
+    if (this.props.application.includes(expertise)) {
+      return (
+        <Button
+          floated="right"
+          style={{ marginTop: 10 }}
+          onClick={() => {
+            this.handleClick(expertise);
+          }}
+        >
+          Deselect
+        </Button>
+      );
+    }
+    return (
+      <Button
+        floated="right"
+        style={{ marginTop: 10 }}
+        onClick={() => {
+          this.handleClick(expertise);
+        }}
+      >
+        Select
+      </Button>
+    );
+  }
+
+  handleClick(expertise) {
+    if (this.props.application.includes(expertise)) {
+      this.props.removeExpertise(expertise);
+    } else {
+      this.props.addExpertise(expertise);
+    }
+  }
+
   render() {
     return (
       <Item>
@@ -23,12 +63,15 @@ class ServiceItem extends Component {
         <Item.Content>
           <Item.Header>{this.props.header}</Item.Header>
           <Item.Description>{this.props.description}</Item.Description>
-
-          <Button style={{ marginTop: 10 }}>Select</Button>
+          <Item.Extra>{this.renderButton(this.props.header)}</Item.Extra>
         </Item.Content>
       </Item>
     );
   }
 }
 
-export default ServiceItem;
+function mapStateToProps({ application }) {
+  return { application };
+}
+
+export default connect(mapStateToProps, actions)(ServiceItem);

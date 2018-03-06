@@ -7,7 +7,8 @@ import {
   Header,
   Icon,
   Rail,
-  Sticky
+  Sticky,
+  Divider
 } from 'semantic-ui-react';
 import SelectServices from './SelectServices';
 import ApplySteps from './ApplySteps';
@@ -36,9 +37,7 @@ class Apply extends Component {
               </Header>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <ApplySteps />
-          </Grid.Row>
+          <Divider />
           <SelectServices />
         </Grid>
       </div>

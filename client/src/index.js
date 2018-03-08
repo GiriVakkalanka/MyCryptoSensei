@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { loadState, saveState } from './localStorage';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //import storage from 'redux-persist/lib/storage';
 // import { persistStore, persistReducer } from 'redux-persist';
 // import { PersistGate } from 'redux-persist/integration/react';
@@ -36,7 +37,9 @@ store.subscribe(() => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
   </Provider>,
   document.querySelector('#root')
 );

@@ -4,6 +4,7 @@ import authReducer from './authReducer';
 import applicationReducer from './applicationReducer';
 import linksReducer from './linksReducer';
 import adminReducer from './adminReducer';
+import dateReducer from './dateReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -17,5 +18,6 @@ export default combineReducers({
   form: reduxForm,
   application: applicationReducer,
   links: linksReducer,
-  admin: adminReducer
+  admin: adminReducer,
+  date: dateReducer
 });

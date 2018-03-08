@@ -7,7 +7,10 @@ import {
   CHANGE_LINKONE,
   CHANGE_LINKTWO,
   CHANGE_LINKTHREE,
-  FETCH_NEW_APPLICATIONS
+  FETCH_NEW_APPLICATIONS,
+  CHANGE_DATE,
+  CHANGE_STARTTIME,
+  CHANGE_ENDTIME
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -70,4 +73,22 @@ export const acceptApplication = key => async dispatch => {
 export const denyApplication = key => async dispatch => {
   const res = await axios.post('/api/deny-application', key);
   dispatch({ type: FETCH_NEW_APPLICATIONS, payload: res.data });
+};
+
+export const changeDate = date => {
+  //console.log(date);
+  return { type: CHANGE_DATE, payload: date };
+};
+
+export const changeStarttime = startTime => {
+  return { type: CHANGE_STARTTIME, payload: startTime };
+};
+
+export const changeEndtime = endTime => {
+  return { type: CHANGE_ENDTIME, payload: endTime };
+};
+
+export const saveTimeWindow = timeWindow => async dispatch => {
+  const res = await axios.post('/api/save_time_window', timeWindow);
+  dispatch({ type: FETCH_USER, payload: res.data });
 };

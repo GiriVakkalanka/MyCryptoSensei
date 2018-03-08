@@ -7,3 +7,7 @@ export const CHANGE_LINKONE = 'change_link_one';
 export const CHANGE_LINKTWO = 'change_link_two';
 export const CHANGE_LINKTHREE = 'change_link_three';
 export const FETCH_NEW_APPLICATIONS = 'fetch_new_applications';
+export const CHANGE_DATE = 'change_date';
+export const CHANGE_STARTTIME = 'change_starttime';
+export const CHANGE_ENDTIME = 'change_endtime';
+export const SAVE_WINDOW = 'change_window';

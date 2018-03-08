@@ -40,3 +40,29 @@ passport.use(
     }
   )
 );
+
+// passport.use(
+//   //proxy: true config option for redirect URI HTTPS to work
+//   new GoogleStrategy(
+//     {
+//       clientID: keys.googleClientID,
+//       clientSecret: keys.googleClientSecret,
+//       callbackURL: '/auth/google/callbackApplication',
+//       proxy: true
+//     },
+//     async (accessToken, refreshToken, profile, done) => {
+//       /*
+//       console.log('access token ', accessToken);
+//       console.log('refresh token ', refreshToken);
+//       console.log('profile:', profile);
+//       */
+//       const existingUser = await User.findOne({ googleId: profile.id });
+//
+//       if (existingUser) {
+//         return done(null, existingUser);
+//       }
+//       const user = await new User({ googleId: profile.id }).save();
+//       done(null, user);
+//     }
+//   )
+// );

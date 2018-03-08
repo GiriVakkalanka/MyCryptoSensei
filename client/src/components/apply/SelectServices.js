@@ -10,7 +10,8 @@ import {
   Icon,
   Accordion,
   Checkbox,
-  Item
+  Item,
+  Divider
 } from 'semantic-ui-react';
 import ServiceItem from './ServiceItem';
 class SelectServices extends Component {
@@ -49,6 +50,7 @@ class SelectServices extends Component {
             </Segment>
           </Grid.Column>
         </Grid.Row>
+        <Divider />
       </Grid>
     );
   }

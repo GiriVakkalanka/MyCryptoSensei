@@ -15,7 +15,7 @@ import * as actions from '../../actions';
 
 class ServiceItem extends Component {
   componentDidMount() {
-    console.log(this.props.application);
+    //console.log(this.props.application);
   }
   renderButton(expertise) {
     if (this.props.application.includes(expertise)) {

@@ -12,7 +12,22 @@ module.exports = app => {
     '/auth/google/callback',
     passport.authenticate('google'),
     (req, res) => {
-      res.redirect('/');
+      res.redirect('/redirect');
+    }
+  );
+
+  app.get(
+    '/auth/googleApplication',
+    passport.authenticate('google', {
+      scope: ['profile', 'email']
+    })
+  );
+
+  app.get(
+    '/auth/google/callbackApplication',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/apply');
     }
   );
 

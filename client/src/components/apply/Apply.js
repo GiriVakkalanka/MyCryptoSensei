@@ -13,6 +13,8 @@ import {
 import SelectServices from './SelectServices';
 import ApplySteps from './ApplySteps';
 import ServiceItem from './ServiceItem';
+import Login from './Login';
+import AddLinks from './AddLinks';
 
 class Apply extends Component {
   state = {};
@@ -39,6 +41,8 @@ class Apply extends Component {
           </Grid.Row>
           <Divider />
           <SelectServices />
+          <AddLinks />
+          <Login />
         </Grid>
       </div>
     );

@@ -11,6 +11,7 @@ import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import LayoutTest from './layout/LayoutTest';
 import ApplyWrapper from './apply/ApplyWrapper';
+import Redirect from './apply/Redirect';
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
             <NavHeader />
             <Route exact path="/" component={Landing} />
             <Route exact path="/apply" component={ApplyWrapper} />
+            <Route exact path="/redirect" component={Redirect} />
           </div>
         </BrowserRouter>
       </div>

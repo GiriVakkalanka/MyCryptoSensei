@@ -1,18 +1,9 @@
-import _ from 'lodash';
+//import _ from 'lodash';
 import React, { Component } from 'react';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Rail,
-  Sticky,
-  Divider
-} from 'semantic-ui-react';
+import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import SelectServices from './SelectServices';
-import ApplySteps from './ApplySteps';
-import ServiceItem from './ServiceItem';
+//import ApplySteps from './ApplySteps';
+//import ServiceItem from './ServiceItem';
 import Login from './Login';
 import AddLinks from './AddLinks';
 

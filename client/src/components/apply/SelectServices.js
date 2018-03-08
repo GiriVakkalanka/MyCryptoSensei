@@ -2,17 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Accordion,
-  Checkbox,
-  Item,
-  Divider
-} from 'semantic-ui-react';
+import { Segment, Grid, Header, Item, Divider } from 'semantic-ui-react';
 import ServiceItem from './ServiceItem';
 class SelectServices extends Component {
   render() {

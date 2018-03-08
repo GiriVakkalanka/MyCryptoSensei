@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Card,
-  Segment,
-  Grid,
-  Checkbox,
-  Accordion,
-  Icon,
-  Header,
-  Button,
-  Item
-} from 'semantic-ui-react';
+import { Icon, Header, Button, Item } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 

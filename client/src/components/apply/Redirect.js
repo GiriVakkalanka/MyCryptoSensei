@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
+//import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
 
 class Redirect extends Component {
   componentDidMount() {

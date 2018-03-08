@@ -2,16 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Form,
-  Divider,
-  Input
-} from 'semantic-ui-react';
+import { Segment, Grid, Header, Form, Divider, Input } from 'semantic-ui-react';
 
 class AddLinks extends Component {
   handleChange(e, key) {
@@ -22,6 +13,8 @@ class AddLinks extends Component {
         return this.props.changeLinkTwo({ linkTwo: e.target.value });
       case 3:
         return this.props.changeLinkThree({ linkThree: e.target.value });
+      default:
+        return;
     }
   }
   render() {

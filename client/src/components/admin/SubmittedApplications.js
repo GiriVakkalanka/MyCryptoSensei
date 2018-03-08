@@ -2,15 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Item,
-  Divider
-} from 'semantic-ui-react';
+import { Segment, Grid, Header, Item, Divider } from 'semantic-ui-react';
 import ApplicationItem from './ApplicationItem';
 
 class SubmittedApplications extends Component {

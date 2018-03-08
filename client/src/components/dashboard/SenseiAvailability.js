@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon, Input } from 'semantic-ui-react';
+import { Segment, Grid, Header, Icon } from 'semantic-ui-react';
 import WindowSelector from './WindowSelector';
 //import DatePicker from 'react-datepicker';
 //import moment from 'moment';
@@ -19,7 +19,21 @@ class SenseiAvailability extends Component {
     });
   }
   render() {
-    return <WindowSelector />;
+    return (
+      <Grid stackable container>
+        <Grid.Row>
+          <Grid.Column width={4}>
+            <Header as="h1" icon>
+              <Icon name="dollar" />
+              <Header.Content>Apply to be a Sensei</Header.Content>
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <WindowSelector />
+        </Grid.Row>
+      </Grid>
+    );
   }
 }
 

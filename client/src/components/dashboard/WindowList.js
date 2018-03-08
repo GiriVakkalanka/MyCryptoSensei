@@ -2,15 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-//import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
-import Drawer from '../layout/Drawer';
-import Admin from './Admin';
+import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
 
-class AdminWrapper extends Component {
+class WindowList extends Component {
   render() {
     return (
       <div>
-        <Drawer pusher={<Admin />} />
+        <h1>Generic Component</h1>
       </div>
     );
   }
@@ -20,4 +18,4 @@ function mapStateToProps({ application }) {
   return { application };
 }
 
-export default connect(mapStateToProps, actions)(AdminWrapper);
+export default connect(mapStateToProps, actions)(WindowList);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LayoutTest from './LayoutTest';
-import { Sidebar, Segment, Button, Menu, Image, Icon } from 'semantic-ui-react';
+//import LayoutTest from './LayoutTest';
+import { Sidebar, Menu, Icon } from 'semantic-ui-react';
 
 class SidebarLeftSlideAlong extends Component {
   state = { visible: true };

@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LayoutTest from './LayoutTest';
+//import LayoutTest from './LayoutTest';
 import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 
-import {
-  Sidebar,
-  Segment,
-  Button,
-  Menu,
-  Image,
-  Icon,
-  Header,
-  Container
-} from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
 
 class NavHeader extends Component {
   state = { visible: true };

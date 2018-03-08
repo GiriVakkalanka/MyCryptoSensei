@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
+import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import SubmittedApplications from './SubmittedApplications';
 
 class Admin extends Component {

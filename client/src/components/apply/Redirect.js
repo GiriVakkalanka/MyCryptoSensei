@@ -9,7 +9,7 @@ class Redirect extends Component {
     console.log(this.props.application);
     console.log(this.props.links);
     if (this.props.application.length > 0) {
-      this.props.history.push('/apply');
+      this.props.history.push('/thanks');
     } else {
       this.props.history.push('/');
     }

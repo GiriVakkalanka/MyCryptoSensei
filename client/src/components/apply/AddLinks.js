@@ -30,8 +30,10 @@ class AddLinks extends Component {
         <Grid.Row>
           <Grid.Column width={9}>
             <Header as="h2">
-              Select the services that you would like to provide.
-              <Header.Subheader>Choose all that apply</Header.Subheader>
+              What do you do?
+              <Header.Subheader>
+                Add any three links that best describe your work.
+              </Header.Subheader>
             </Header>
             <Segment>
               <Form>

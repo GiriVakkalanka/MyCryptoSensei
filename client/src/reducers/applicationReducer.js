@@ -1,4 +1,8 @@
-import { ADD_EXPERTISE, REMOVE_EXPERTISE } from '../actions/types';
+import {
+  ADD_EXPERTISE,
+  REMOVE_EXPERTISE,
+  CLEAR_EXPERTISE
+} from '../actions/types';
 //import { defaultState } from './defaultState.js';
 
 export default function(state = [], action) {
@@ -17,6 +21,8 @@ export default function(state = [], action) {
         }
       }
       return state;
+    case CLEAR_EXPERTISE:
+      return [];
     default:
       //console.log(action.payload);
       return state;

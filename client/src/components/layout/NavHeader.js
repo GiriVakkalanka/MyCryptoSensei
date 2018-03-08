@@ -23,7 +23,7 @@ class NavHeader extends Component {
 
   renderLoginButton() {
     return this.props.auth ? (
-      <Menu.Item name="home" href="/api/logout">
+      <Menu.Item position="right" name="home" href="/api/logout">
         <div style={{ color: 'yellow' }}>Log out</div>
         <Icon color="yellow" name="user circle outline" />
       </Menu.Item>
@@ -36,6 +36,7 @@ class NavHeader extends Component {
   }
 
   renderApplyButton() {
+    console.log(this.props.auth);
     return this.props.auth ? (
       this.props.auth.sensei ? null : (
         <Menu.Item as={Link} to="/apply" position="right">
@@ -44,6 +45,15 @@ class NavHeader extends Component {
         </Menu.Item>
       )
     ) : null;
+  }
+
+  renderAdminButton() {
+    return (
+      <Menu.Item as={Link} to="/admin">
+        <div style={{ color: 'yellow' }}>Admin</div>
+        <Icon color="yellow" name="key" />
+      </Menu.Item>
+    );
   }
 
   render() {
@@ -59,6 +69,7 @@ class NavHeader extends Component {
       >
         {this.renderApplyButton()}
         {this.renderLoginButton()}
+        {this.renderAdminButton()}
       </Menu>
     );
   }

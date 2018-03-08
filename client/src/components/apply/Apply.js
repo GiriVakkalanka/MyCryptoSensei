@@ -25,9 +25,8 @@ class Apply extends Component {
     //console.log(event.srcElement.body.scrollHeight);
     //console.log(window.pageYOffset);
   }
-  handleContextRef = contextRef => this.setState({ contextRef });
+
   render() {
-    const { contextRef } = this.state;
     return (
       <div>
         <Grid stackable container>

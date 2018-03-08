@@ -3,6 +3,7 @@ import { reducer as reduxForm } from 'redux-form';
 import authReducer from './authReducer';
 import applicationReducer from './applicationReducer';
 import linksReducer from './linksReducer';
+import adminReducer from './adminReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -15,5 +16,6 @@ export default combineReducers({
   auth: authReducer,
   form: reduxForm,
   application: applicationReducer,
-  links: linksReducer
+  links: linksReducer,
+  admin: adminReducer
 });

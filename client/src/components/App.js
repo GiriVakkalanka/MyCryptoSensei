@@ -12,6 +12,8 @@ import SurveyNew from './surveys/SurveyNew';
 import LayoutTest from './layout/LayoutTest';
 import ApplyWrapper from './apply/ApplyWrapper';
 import Redirect from './apply/Redirect';
+import Thanks from './apply/Thanks';
+import AdminWrapper from './admin/AdminWrapper';
 
 class App extends Component {
   componentDidMount() {
@@ -26,6 +28,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/apply" component={ApplyWrapper} />
             <Route exact path="/redirect" component={Redirect} />
+            <Route exact path="/thanks" component={Thanks} />\
+            <Route exact path="/Admin" component={AdminWrapper} />
           </div>
         </BrowserRouter>
       </div>

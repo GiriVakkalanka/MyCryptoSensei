@@ -92,3 +92,19 @@ export const saveTimeWindow = timeWindow => async dispatch => {
   const res = await axios.post('/api/save_time_window', timeWindow);
   dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+export const saveSpecialization = specializationChoices => async dispatch => {
+  //console.log(specializationChoices);
+  const res = await axios.post(
+    '/api/save_specialization_choices',
+    specializationChoices
+  );
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const saveServices = serviceChoices => async dispatch => {
+  //console.log(expertiseChoices);
+  const res = await axios.post('/api/save_expertise_choices', serviceChoices);
+  //history.push('/sensei_application');
+  dispatch({ type: FETCH_USER, payload: res.data });
+};

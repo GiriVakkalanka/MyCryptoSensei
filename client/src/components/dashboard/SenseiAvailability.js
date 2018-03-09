@@ -2,8 +2,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Segment, Grid, Header, Icon } from 'semantic-ui-react';
+import { Segment, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import WindowSelector from './WindowSelector';
+import WindowList from './WindowList';
 //import DatePicker from 'react-datepicker';
 //import moment from 'moment';
 //import 'react-datepicker/dist/react-datepicker.css';
@@ -22,15 +23,21 @@ class SenseiAvailability extends Component {
     return (
       <Grid stackable container>
         <Grid.Row>
-          <Grid.Column width={4}>
+          <Grid.Column width={6}>
             <Header as="h1" icon>
-              <Icon name="dollar" />
-              <Header.Content>Apply to be a Sensei</Header.Content>
+              <Icon name="calendar" />
+              <Header.Content>Add windows of availability</Header.Content>
             </Header>
           </Grid.Column>
         </Grid.Row>
+        <Divider />
         <Grid.Row>
-          <WindowSelector />
+          <Grid.Column width={3}>
+            <WindowSelector />
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <WindowList />
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     );

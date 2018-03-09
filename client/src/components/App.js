@@ -15,6 +15,8 @@ import Redirect from './apply/Redirect';
 import Thanks from './apply/Thanks';
 import AdminWrapper from './admin/AdminWrapper';
 import SenseiAvailability from './dashboard/SenseiAvailability';
+import SelectSpecialization from './dashboard/SelectSpecialization';
+import SelectServices from './dashboard/SelectServices';
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +33,21 @@ class App extends Component {
             <Route exact path="/redirect" component={Redirect} />
             <Route exact path="/thanks" component={Thanks} />
             <Route exact path="/Admin" component={AdminWrapper} />
-            <Route exact path="/dashboard" component={SenseiAvailability} />
+            <Route
+              exact
+              path="/dashboard/schedule"
+              component={SenseiAvailability}
+            />
+            <Route
+              exact
+              path="/dashboard/specialization"
+              component={SelectSpecialization}
+            />
+            <Route
+              exact
+              path="/dashboard/services"
+              component={SelectServices}
+            />
           </div>
         </BrowserRouter>
       </div>

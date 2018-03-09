@@ -1,4 +1,4 @@
-//import _ from 'lodash';
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -12,8 +12,37 @@ import {
   Image,
   Divider
 } from 'semantic-ui-react';
+import Chip from 'material-ui/Chip';
+
+const styles = {
+  chip: {
+    margin: 4
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  }
+};
 
 class HitComponent extends Component {
+  renderServiceChips() {
+    return _.map(this.props.expertise, expertise => {
+      return (
+        <Chip style={styles.chip} key={expertise}>
+          {expertise}
+        </Chip>
+      );
+    });
+  }
+  renderSpecializationChips() {
+    return _.map(this.props.specialization, specialization => {
+      return (
+        <Chip style={styles.chip} key={specialization}>
+          {specialization}
+        </Chip>
+      );
+    });
+  }
   render() {
     return (
       <Grid>
@@ -28,14 +57,26 @@ class HitComponent extends Component {
             </Header.Subheader>
           </Grid.Column>
           <Header as="h4">{this.props.desc}</Header>
+          <Grid.Row>
+            <Grid.Column>
+              <h5>Services offered:</h5>
+            </Grid.Column>
+            <div style={styles.wrapper}>{this.renderServiceChips()}</div>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <h5>Specialization:</h5>
+            </Grid.Column>
+            <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
+          </Grid.Row>
         </Segment>
       </Grid>
     );
   }
 }
 
-function mapStateToProps({ application }) {
-  return { application };
+function mapStateToProps({ auth }) {
+  return { auth };
 }
 
 export default connect(mapStateToProps, actions)(HitComponent);

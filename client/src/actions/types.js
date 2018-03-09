@@ -12,3 +12,6 @@ export const CHANGE_STARTTIME = 'change_starttime';
 export const CHANGE_ENDTIME = 'change_endtime';
 export const SAVE_WINDOW = 'change_window';
 export const LOAD_EXPERTISE = 'load expertise';
+export const CHANGE_CITY = 'change_city';
+export const CHANGE_COUNTRY = 'change_country';
+export const CHANGE_DESCRIPTION = 'change_description';

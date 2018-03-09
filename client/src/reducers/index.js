@@ -5,6 +5,7 @@ import applicationReducer from './applicationReducer';
 import linksReducer from './linksReducer';
 import adminReducer from './adminReducer';
 import dateReducer from './dateReducer';
+import infoReducer from './infoReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -19,5 +20,6 @@ export default combineReducers({
   application: applicationReducer,
   links: linksReducer,
   admin: adminReducer,
-  date: dateReducer
+  date: dateReducer,
+  info: infoReducer
 });

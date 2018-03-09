@@ -18,6 +18,7 @@ import SenseiAvailability from './dashboard/SenseiAvailability';
 import SelectSpecialization from './dashboard/SelectSpecialization';
 import SelectServices from './dashboard/SelectServices';
 import SelectLinks from './dashboard/SelectLinks';
+import AddInfo from './dashboard/AddInfo';
 
 class App extends Component {
   componentDidMount() {
@@ -50,6 +51,7 @@ class App extends Component {
               component={SelectServices}
             />
             <Route exact path="/dashboard/links" component={SelectLinks} />
+            <Route exact path="/dashboard/info" component={AddInfo} />
           </div>
         </BrowserRouter>
       </div>

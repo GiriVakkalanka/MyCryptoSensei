@@ -63,7 +63,9 @@ class SelectLinks extends Component {
                     icon="chain"
                     iconPosition="left"
                     defaultValue={
-                      this.props.auth ? this.props.auth.links.linkTwo : ''
+                      this.props.auth && this.props.auth.links
+                        ? this.props.auth.links.linkTwo
+                        : ''
                     }
                     onChange={e => this.handleChange(e, 2)}
                   />
@@ -75,7 +77,9 @@ class SelectLinks extends Component {
                     icon="chain"
                     iconPosition="left"
                     defaultValue={
-                      this.props.auth ? this.props.auth.links.linkThree : ''
+                      this.props.auth && this.props.auth.links
+                        ? this.props.auth.links.linkThree
+                        : ''
                     }
                     onChange={e => this.handleChange(e, 3)}
                   />

@@ -10,7 +10,10 @@ import {
   FETCH_NEW_APPLICATIONS,
   CHANGE_DATE,
   CHANGE_STARTTIME,
-  CHANGE_ENDTIME
+  CHANGE_ENDTIME,
+  CHANGE_CITY,
+  CHANGE_COUNTRY,
+  CHANGE_DESCRIPTION
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -113,4 +116,22 @@ export const saveLinks = linkChoices => async dispatch => {
   //console.log(specializationChoices);
   const res = await axios.post('/api/save_link_choices', linkChoices);
   dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const saveInfo = info => async dispatch => {
+  //console.log('action called');
+  const res = await axios.post('/api/save_info', info);
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const changeCity = city => {
+  return { type: CHANGE_CITY, payload: city };
+};
+
+export const changeCountry = country => {
+  return { type: CHANGE_COUNTRY, payload: country };
+};
+
+export const changeDescription = description => {
+  return { type: CHANGE_DESCRIPTION, payload: description };
 };

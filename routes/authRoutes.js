@@ -140,7 +140,7 @@ module.exports = app => {
   });
 
   app.post('/api/save_info', requireLogin, async (req, res) => {
-    console.log('route called');
+    //console.log('route called');
     const info = req.body;
     console.log(info);
 
@@ -156,6 +156,6 @@ module.exports = app => {
     //   }
     //   console.log(content);
     // });
-    res.send(updatedUser);
+    res.send('hi');
   });
 };

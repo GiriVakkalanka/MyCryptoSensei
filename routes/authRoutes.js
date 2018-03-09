@@ -3,6 +3,10 @@ const passport = require('passport');
 const requireLogin = require('../middlewares/requireLogin');
 const Window = mongoose.model('window');
 const User = mongoose.model('users');
+const keys = require('../config/keys');
+const algoliasearch = require('algoliasearch');
+const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
+const index = client.initIndex('KoinVetDev');
 
 module.exports = app => {
   app.get(
@@ -52,12 +56,12 @@ module.exports = app => {
     const updatedUser = await userRecord.save();
     console.log(updatedUser);
 
-    // index.saveObject(updatedUser, function(err, content) {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    //   console.log(content);
-    // });
+    index.saveObject(updatedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
     res.send(updatedUser);
   });
 
@@ -89,14 +93,14 @@ module.exports = app => {
       const userRecord = await User.findOne({ _id: req.user.id });
       userRecord.specialization = specializationChoices;
       const updatedUser = await userRecord.save();
-      //console.log(updatedUser);
+      console.log(updatedUser);
 
-      // index.saveObject(updatedUser, function(err, content) {
-      //   if (err) {
-      //     console.log(err);
-      //   }
-      //   console.log(content);
-      // });
+      index.saveObject(updatedUser, function(err, content) {
+        if (err) {
+          console.log(err);
+        }
+        console.log(content);
+      });
 
       res.send(updatedUser);
     }
@@ -111,12 +115,12 @@ module.exports = app => {
     const updatedUser = await userRecord.save();
     console.log(updatedUser);
 
-    // index.saveObject(updatedUser, function(err, content) {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    //   console.log(content);
-    // });
+    index.saveObject(updatedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
 
     res.send(updatedUser);
   });
@@ -130,12 +134,12 @@ module.exports = app => {
     userRecord.rate = newRate.rate;
     const updatedUser = await userRecord.save();
     console.log(updatedUser);
-    // index.saveObject(updatedUser, function(err, content) {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    //   console.log(content);
-    // });
+    index.saveObject(updatedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
     res.send(updatedUser);
   });
 
@@ -150,12 +154,12 @@ module.exports = app => {
     userRecord.country = info.country;
     const updatedUser = await userRecord.save();
     console.log(updatedUser);
-    // index.saveObject(updatedUser, function(err, content) {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    //   console.log(content);
-    // });
+    index.saveObject(updatedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
     res.send('hi');
   });
 };

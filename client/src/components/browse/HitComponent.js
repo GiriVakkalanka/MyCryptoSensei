@@ -45,6 +45,23 @@ class HitComponent extends Component {
       );
     });
   }
+  renderLinks() {
+    return (
+      <div>
+        <a href={this.props.links[0]}>
+          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+        </a>
+        <a href={this.props.links[1]}>
+          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+        </a>
+        <a href={this.props.links[2]}>
+          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+        </a>
+
+        <Button floated="right">See availability</Button>
+      </div>
+    );
+  }
   render() {
     return (
       <Grid>
@@ -72,17 +89,21 @@ class HitComponent extends Component {
           <Header as="h4">{this.props.desc}</Header>
           <Grid.Row>
             <Grid.Column>
-              <h5>Services offered:</h5>
+              <h5>Services offered</h5>
             </Grid.Column>
             <div style={styles.wrapper}>{this.renderServiceChips()}</div>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <h5>Specialization:</h5>
+              <h5>Specialization</h5>
             </Grid.Column>
             <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
-
-            <Button floated="right">See Availability</Button>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <h5>Links</h5>
+            </Grid.Column>
+            <div>{this.renderLinks()}</div>
           </Grid.Row>
         </Segment>
       </Grid>

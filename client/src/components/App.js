@@ -32,7 +32,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <NavHeader />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={BrowseWrapper} />
             <Route exact path="/apply" component={ApplyWrapper} />
             <Route exact path="/redirect" component={Redirect} />
             <Route exact path="/thanks" component={Thanks} />

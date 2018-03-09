@@ -15,6 +15,7 @@ import {
 } from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import HitComponent from './HitComponent';
+import ServiceGallery from './ServiceGallery';
 import Logo from '../../images/sensei_1a.png';
 
 const Hit = ({ hit }) => (
@@ -46,11 +47,15 @@ class Browse extends Component {
     const renderButton = <Button />;
     return (
       <div>
-        <Image style={{ paddingLeft: '20' }} size="big" src={Logo} />
-        <Header style={{ paddingLeft: '50' }} size="huge">
+        <Image style={{ paddingLeft: '40' }} size="big" src={Logo} />
+        <Header style={{ paddingLeft: '60' }} size="huge">
           Connect with safe and reliable experts for all of your crypto needs.
         </Header>
-
+        <Grid stackable container>
+          <Grid.Row>
+            <ServiceGallery />
+          </Grid.Row>
+        </Grid>
         <InstantSearch
           apiKey="53d73d0deaf00b036b6bc83b99f998b1"
           appId="ND8QXFOQUH"

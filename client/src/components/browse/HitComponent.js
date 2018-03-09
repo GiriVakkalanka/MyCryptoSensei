@@ -49,16 +49,36 @@ class HitComponent extends Component {
     return (
       <div>
         <a href={this.props.links[0]}>
-          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+          <Icon
+            color="yellow"
+            fitted
+            style={{ marginTop: 5 }}
+            size="big"
+            name="chain"
+          />
         </a>
         <a href={this.props.links[1]}>
-          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+          <Icon
+            color="yellow"
+            fitted
+            style={{ marginTop: 5 }}
+            size="big"
+            name="chain"
+          />
         </a>
         <a href={this.props.links[2]}>
-          <Icon fitted style={{ marginTop: 5 }} size="big" name="chain" />
+          <Icon
+            color="yellow"
+            fitted
+            style={{ marginTop: 5 }}
+            size="big"
+            name="chain"
+          />
         </a>
 
-        <Button floated="right">See availability</Button>
+        <Button color="yellow" floated="right">
+          <div style={{ color: 'black' }}>See availability</div>
+        </Button>
       </div>
     );
   }

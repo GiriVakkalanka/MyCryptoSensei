@@ -44,6 +44,23 @@ module.exports = app => {
     res.send(req.user);
   });
 
+  app.post('/api/save_expertise_choices', requireLogin, async (req, res) => {
+    const choices = req.body;
+    console.log(choices);
+    const userRecord = await User.findOne({ _id: req.user.id });
+    userRecord.services = choices;
+    const updatedUser = await userRecord.save();
+    console.log(updatedUser);
+
+    // index.saveObject(updatedUser, function(err, content) {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    //   console.log(content);
+    // });
+    res.send(updatedUser);
+  });
+
   app.post('/api/save_time_window', requireLogin, async (req, res) => {
     const timeWindow = req.body;
     const windowRecord = new Window({

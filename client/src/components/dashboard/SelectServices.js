@@ -2,9 +2,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Segment, Grid, Header, Item, Divider } from 'semantic-ui-react';
+import {
+  Segment,
+  Grid,
+  Header,
+  Item,
+  Divider,
+  Button
+} from 'semantic-ui-react';
 import ServiceItem from './ServiceItem';
 class SelectServices extends Component {
+  handleSave() {
+    this.props.saveServices(this.props.application);
+    this.props.clearExpertise();
+    this.props.history.push('/');
+  }
   render() {
     return (
       <Grid container>
@@ -38,6 +50,7 @@ class SelectServices extends Component {
                 />
               </Item.Group>
             </Segment>
+            <Button onClick={() => this.handleSave()}>Save</Button>
           </Grid.Column>
         </Grid.Row>
         <Divider />

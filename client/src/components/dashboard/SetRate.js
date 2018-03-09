@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {
-  Card,
   Segment,
   Grid,
   Header,
-  Icon,
   Form,
   Input,
   Button,

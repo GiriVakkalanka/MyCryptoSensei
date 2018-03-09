@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon, Item } from 'semantic-ui-react';
+import { Segment, Item } from 'semantic-ui-react';
 import WindowListItem from './WindowListItem';
 
 class WindowList extends Component {

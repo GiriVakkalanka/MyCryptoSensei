@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon, Item } from 'semantic-ui-react';
+import { Header, Icon, Item } from 'semantic-ui-react';
 import moment from 'moment';
 
 class WindowListItem extends Component {

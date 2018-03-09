@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
-import RaisedButton from 'material-ui/RaisedButton';
 import { Button, Segment } from 'semantic-ui-react';
 
 import moment from 'moment';

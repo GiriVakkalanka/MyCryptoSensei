@@ -6,6 +6,7 @@ import linksReducer from './linksReducer';
 import adminReducer from './adminReducer';
 import dateReducer from './dateReducer';
 import infoReducer from './infoReducer';
+import rateReducer from './rateReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -21,5 +22,6 @@ export default combineReducers({
   links: linksReducer,
   admin: adminReducer,
   date: dateReducer,
-  info: infoReducer
+  info: infoReducer,
+  rate: rateReducer
 });

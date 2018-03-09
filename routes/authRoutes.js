@@ -122,7 +122,7 @@ module.exports = app => {
   });
 
   app.post('/api/save_rate', requireLogin, async (req, res) => {
-    console.log('route called');
+    //console.log('route called');
     const newRate = req.body;
     console.log(newRate);
 

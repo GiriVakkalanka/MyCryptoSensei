@@ -13,7 +13,8 @@ import {
   CHANGE_ENDTIME,
   CHANGE_CITY,
   CHANGE_COUNTRY,
-  CHANGE_DESCRIPTION
+  CHANGE_DESCRIPTION,
+  CHANGE_RATE
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -134,4 +135,13 @@ export const changeCountry = country => {
 
 export const changeDescription = description => {
   return { type: CHANGE_DESCRIPTION, payload: description };
+};
+
+export const changeRate = rate => {
+  return { type: CHANGE_RATE, payload: rate };
+};
+
+export const saveRate = rate => async dispatch => {
+  const res = await axios.post('/api/save_rate', rate);
+  dispatch({ type: FETCH_USER, payload: res.data });
 };

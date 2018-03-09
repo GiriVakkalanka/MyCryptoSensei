@@ -15,3 +15,4 @@ export const LOAD_EXPERTISE = 'load expertise';
 export const CHANGE_CITY = 'change_city';
 export const CHANGE_COUNTRY = 'change_country';
 export const CHANGE_DESCRIPTION = 'change_description';
+export const CHANGE_RATE = 'change_rate';

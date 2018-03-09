@@ -19,6 +19,7 @@ import SelectSpecialization from './dashboard/SelectSpecialization';
 import SelectServices from './dashboard/SelectServices';
 import SelectLinks from './dashboard/SelectLinks';
 import AddInfo from './dashboard/AddInfo';
+import SetRate from './dashboard/SetRate';
 
 class App extends Component {
   componentDidMount() {
@@ -52,6 +53,7 @@ class App extends Component {
             />
             <Route exact path="/dashboard/links" component={SelectLinks} />
             <Route exact path="/dashboard/info" component={AddInfo} />
+            <Route exact path="/dashboard/rate" component={SetRate} />
           </div>
         </BrowserRouter>
       </div>

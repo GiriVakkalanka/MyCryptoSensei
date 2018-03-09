@@ -108,3 +108,9 @@ export const saveServices = serviceChoices => async dispatch => {
   //history.push('/sensei_application');
   dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+export const saveLinks = linkChoices => async dispatch => {
+  //console.log(specializationChoices);
+  const res = await axios.post('/api/save_link_choices', linkChoices);
+  dispatch({ type: FETCH_USER, payload: res.data });
+};

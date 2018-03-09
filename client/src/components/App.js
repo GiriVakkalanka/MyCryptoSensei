@@ -17,6 +17,7 @@ import AdminWrapper from './admin/AdminWrapper';
 import SenseiAvailability from './dashboard/SenseiAvailability';
 import SelectSpecialization from './dashboard/SelectSpecialization';
 import SelectServices from './dashboard/SelectServices';
+import SelectLinks from './dashboard/SelectLinks';
 
 class App extends Component {
   componentDidMount() {
@@ -48,6 +49,7 @@ class App extends Component {
               path="/dashboard/services"
               component={SelectServices}
             />
+            <Route exact path="/dashboard/links" component={SelectLinks} />
           </div>
         </BrowserRouter>
       </div>

@@ -10,7 +10,9 @@ import {
   Icon,
   Item,
   Image,
-  Divider
+  Divider,
+  Statistic,
+  Button
 } from 'semantic-ui-react';
 import Chip from 'material-ui/Chip';
 
@@ -47,15 +49,26 @@ class HitComponent extends Component {
     return (
       <Grid>
         <Segment>
-          <Grid.Column>
-            <Image floated="left" src={this.props.pic} rounded />
-          </Grid.Column>
-          <Grid.Column>
-            <Header>{this.props.name}</Header>
-            <Header.Subheader>
-              {this.props.city}, {this.props.country}
-            </Header.Subheader>
-          </Grid.Column>
+          <Grid.Row>
+            <Grid.Column>
+              <Image floated="left" src={this.props.pic} rounded />
+            </Grid.Column>
+            <Grid.Column>
+              <Header>{this.props.name}</Header>
+              <Header.Subheader>
+                {this.props.city}, {this.props.country}
+              </Header.Subheader>
+            </Grid.Column>
+
+            <Statistic floated="right">
+              <Statistic.Value>
+                $
+                {this.props.rate}
+              </Statistic.Value>
+              <Statistic.Label>USD/Hour</Statistic.Label>
+            </Statistic>
+          </Grid.Row>
+
           <Header as="h4">{this.props.desc}</Header>
           <Grid.Row>
             <Grid.Column>
@@ -68,6 +81,8 @@ class HitComponent extends Component {
               <h5>Specialization:</h5>
             </Grid.Column>
             <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
+
+            <Button floated="right">See Availability</Button>
           </Grid.Row>
         </Segment>
       </Grid>

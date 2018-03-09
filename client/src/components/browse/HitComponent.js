@@ -15,6 +15,7 @@ import {
   Button
 } from 'semantic-ui-react';
 import Chip from 'material-ui/Chip';
+import { Link } from 'react-router-dom';
 
 const styles = {
   chip: {
@@ -27,6 +28,11 @@ const styles = {
 };
 
 class HitComponent extends Component {
+  handleClick() {
+    const senseiId = this.props.id;
+    const info = { key: senseiId };
+    this.props.getSenseiPage(info);
+  }
   renderServiceChips() {
     return _.map(this.props.expertise, expertise => {
       return (
@@ -48,7 +54,7 @@ class HitComponent extends Component {
   renderLinks() {
     return (
       <div>
-        <a href={this.props.links[0]}>
+        <a href={this.props.links ? this.props.links[0] : ''}>
           <Icon
             color="yellow"
             fitted
@@ -57,7 +63,7 @@ class HitComponent extends Component {
             name="chain"
           />
         </a>
-        <a href={this.props.links[1]}>
+        <a href={this.props.links ? this.props.links[1] : ''}>
           <Icon
             color="yellow"
             fitted
@@ -66,7 +72,7 @@ class HitComponent extends Component {
             name="chain"
           />
         </a>
-        <a href={this.props.links[2]}>
+        <a href={this.props.links ? this.props.links[2] : ''}>
           <Icon
             color="yellow"
             fitted
@@ -76,7 +82,12 @@ class HitComponent extends Component {
           />
         </a>
 
-        <Button color="yellow" floated="right">
+        <Button
+          as={Link}
+          to={`/sensei/${this.props.id}`}
+          color="yellow"
+          floated="right"
+        >
           <div style={{ color: 'black' }}>See availability</div>
         </Button>
       </div>

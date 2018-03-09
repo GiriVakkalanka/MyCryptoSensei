@@ -21,7 +21,7 @@ import SelectLinks from './dashboard/SelectLinks';
 import AddInfo from './dashboard/AddInfo';
 import SetRate from './dashboard/SetRate';
 import BrowseWrapper from './browse/BrowseWrapper';
-
+import ProfilePageWrapper from './browse/ProfilePageWrapper';
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -56,6 +56,7 @@ class App extends Component {
             <Route exact path="/dashboard/info" component={AddInfo} />
             <Route exact path="/dashboard/rate" component={SetRate} />
             <Route exact path="/browse" component={BrowseWrapper} />
+            <Route path="/sensei/:senseiId" component={ProfilePageWrapper} />
           </div>
         </BrowserRouter>
       </div>

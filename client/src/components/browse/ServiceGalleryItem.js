@@ -9,7 +9,13 @@ class ServiceGalleryItem extends Component {
     return (
       <div>
         <Header as="h3" icon>
-          <Icon color="yellow" bordered circular name={this.props.icon} />
+          <Icon
+            inverted
+            color="yellow"
+            bordered
+            circular
+            name={this.props.icon}
+          />
           <Header.Content>{this.props.service}</Header.Content>
         </Header>
       </div>

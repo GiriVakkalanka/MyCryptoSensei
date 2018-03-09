@@ -9,10 +9,13 @@ import {
   Header,
   Icon,
   Input,
-  Divider
+  Divider,
+  Button,
+  Image
 } from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import HitComponent from './HitComponent';
+import Logo from '../../images/sensei_1a.png';
 
 const Hit = ({ hit }) => (
   // <div>
@@ -40,8 +43,14 @@ const Content = () => (
 
 class Browse extends Component {
   render() {
+    const renderButton = <Button />;
     return (
       <div>
+        <Image style={{ paddingLeft: '20' }} size="big" src={Logo} />
+        <Header style={{ paddingLeft: '50' }} size="huge">
+          Connect with safe and reliable experts for all of your crypto needs.
+        </Header>
+
         <InstantSearch
           apiKey="53d73d0deaf00b036b6bc83b99f998b1"
           appId="ND8QXFOQUH"
@@ -49,19 +58,10 @@ class Browse extends Component {
         >
           <Grid stackable container>
             <Grid.Row>
-              <Grid.Column width={4}>
-                <Header as="h1" icon>
-                  <Icon name="dollar" />
-                  <Header.Content>Apply to be a Sensei</Header.Content>
-                </Header>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Input size="massive" fluid>
-                <SearchBox
-                  translations={{ placeholder: 'Search for Senseis' }}
-                />
-              </Input>
+              <SearchBox
+                translations={{ placeholder: 'Search for Senseis' }}
+                reset={renderButton}
+              />
             </Grid.Row>
             <Grid.Row>
               <Content />

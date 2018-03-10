@@ -51,11 +51,7 @@ class Browse extends Component {
         <Header style={{ paddingLeft: '60' }} size="huge">
           Connect with safe and reliable experts for all of your crypto needs.
         </Header>
-        <Grid stackable container>
-          <Grid.Row>
-            <ServiceGallery />
-          </Grid.Row>
-        </Grid>
+
         <InstantSearch
           apiKey="53d73d0deaf00b036b6bc83b99f998b1"
           appId="ND8QXFOQUH"

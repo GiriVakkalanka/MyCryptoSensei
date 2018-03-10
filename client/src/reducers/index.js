@@ -8,6 +8,7 @@ import dateReducer from './dateReducer';
 import infoReducer from './infoReducer';
 import rateReducer from './rateReducer';
 import senseiPageReducer from './senseiPageReducer';
+import drawerReducer from './drawerReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -25,5 +26,6 @@ export default combineReducers({
   date: dateReducer,
   info: infoReducer,
   rate: rateReducer,
-  senseiPage: senseiPageReducer
+  senseiPage: senseiPageReducer,
+  drawer: drawerReducer
 });

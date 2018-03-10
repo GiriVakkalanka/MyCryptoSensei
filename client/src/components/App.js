@@ -39,22 +39,26 @@ class App extends Component {
             <Route exact path="/Admin" component={AdminWrapper} />
             <Route
               exact
-              path="/dashboard/schedule"
+              path="/dashboard/sensei/schedule"
               component={SenseiAvailability}
             />
             <Route
               exact
-              path="/dashboard/specialization"
+              path="/dashboard/sensei/expertise"
               component={SelectSpecialization}
             />
             <Route
               exact
-              path="/dashboard/services"
+              path="sensei/dashboard/services"
               component={SelectServices}
             />
-            <Route exact path="/dashboard/links" component={SelectLinks} />
-            <Route exact path="/dashboard/info" component={AddInfo} />
-            <Route exact path="/dashboard/rate" component={SetRate} />
+            <Route
+              exact
+              path="dashboard/sensei/links"
+              component={SelectLinks}
+            />
+            <Route exact path="/dashboard/sensei/info" component={AddInfo} />
+            <Route exact path="/dashboard/sensei/rate" component={SetRate} />
             <Route exact path="/browse" component={BrowseWrapper} />
             <Route path="/sensei/:senseiId" component={ProfilePageWrapper} />
           </div>

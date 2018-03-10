@@ -18,3 +18,4 @@ export const CHANGE_DESCRIPTION = 'change_description';
 export const CHANGE_RATE = 'change_rate';
 export const GET_SENSEI_PAGE = 'get_sensei_page';
 export const CLEAR_SENSEI_PAGE = 'clear_sensei_page';
+export const TOGGLE_DRAWER = 'toggle_drawer';

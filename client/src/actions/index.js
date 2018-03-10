@@ -16,7 +16,8 @@ import {
   CHANGE_DESCRIPTION,
   CHANGE_RATE,
   GET_SENSEI_PAGE,
-  CLEAR_SENSEI_PAGE
+  CLEAR_SENSEI_PAGE,
+  TOGGLE_DRAWER
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -152,4 +153,8 @@ export const getSenseiPage = info => async dispatch => {
   console.log(info);
   const res = await axios.get('/api/get_sensei_page', { params: info });
   dispatch({ type: GET_SENSEI_PAGE, payload: res.data });
+};
+
+export const toggleDrawer = () => {
+  return { type: TOGGLE_DRAWER, payload: null };
 };

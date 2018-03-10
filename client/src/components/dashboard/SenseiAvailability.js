@@ -32,7 +32,7 @@ class SenseiAvailability extends Component {
         </Grid.Row>
         <Divider />
         <Grid.Row>
-          <Grid.Column width={3}>
+          <Grid.Column width={5}>
             <WindowSelector />
           </Grid.Column>
           <Grid.Column width={8}>

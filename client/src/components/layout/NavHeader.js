@@ -58,6 +58,14 @@ class NavHeader extends Component {
         visible={true}
         inverted
       >
+        <Menu.Item onClick={() => this.props.toggleDrawer()}>
+          <div style={{ color: 'yellow' }}>Menu</div>
+          <Icon
+            style={{ marginLeft: 2, marginTop: 2 }}
+            color="yellow"
+            name="sidebar"
+          />
+        </Menu.Item>
         {this.renderApplyButton()}
         {this.renderLoginButton()}
         {this.renderAdminButton()}
@@ -66,8 +74,8 @@ class NavHeader extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({ auth, drawer }) {
+  return { auth, drawer };
 }
 
 export default connect(mapStateToProps, actions)(NavHeader);

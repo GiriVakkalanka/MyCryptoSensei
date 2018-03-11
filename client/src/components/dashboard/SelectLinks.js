@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import { withRouter } from 'react-router-dom';
 import {
   Segment,
   Grid,
@@ -13,6 +14,9 @@ import {
 } from 'semantic-ui-react';
 
 class SelectLinks extends Component {
+  componentDidMount() {
+    console.log('being called');
+  }
   handleClick() {
     this.props.saveLinks(this.props.links);
     this.props.history.push('/');
@@ -97,4 +101,4 @@ function mapStateToProps({ application, links, auth }) {
   return { application, links, auth };
 }
 
-export default connect(mapStateToProps, actions)(SelectLinks);
+export default connect(mapStateToProps, actions)(withRouter(SelectLinks));

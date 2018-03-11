@@ -8,7 +8,8 @@ import {
   Header,
   Item,
   Divider,
-  Button
+  Button,
+  Icon
 } from 'semantic-ui-react';
 import ServiceItem from './ServiceItem';
 class SelectServices extends Component {
@@ -19,13 +20,23 @@ class SelectServices extends Component {
   }
   render() {
     return (
-      <Grid container>
+      <Grid stackable container>
+        <Grid.Row>
+          <Grid.Column width={6}>
+            <Header as="h1" icon>
+              <Icon name="calendar" />
+              <Header.Content>
+                Select the services that you would like to provide
+              </Header.Content>
+              <Header.Subheader floated="left">
+                Choose all that apply
+              </Header.Subheader>
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Divider />
         <Grid.Row>
           <Grid.Column width={9}>
-            <Header as="h2">
-              Select the services that you would like to provide.
-              <Header.Subheader>Choose all that apply</Header.Subheader>
-            </Header>
             <Segment>
               <Item.Group divided>
                 <ServiceItem
@@ -53,7 +64,6 @@ class SelectServices extends Component {
             <Button onClick={() => this.handleSave()}>Save</Button>
           </Grid.Column>
         </Grid.Row>
-        <Divider />
       </Grid>
     );
   }

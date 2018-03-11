@@ -15,11 +15,17 @@ import Redirect from './apply/Redirect';
 import Thanks from './apply/Thanks';
 import AdminWrapper from './admin/AdminWrapper';
 import SenseiAvailability from './dashboard/SenseiAvailability';
+import AvailabilityWrapper from './dashboard/AvailabilityWrapper';
+import ExpertiseWrapper from './dashboard/ExpertiseWrapper';
 import SelectSpecialization from './dashboard/SelectSpecialization';
 import SelectServices from './dashboard/SelectServices';
+import ServicesWrapper from './dashboard/ServicesWrapper';
 import SelectLinks from './dashboard/SelectLinks';
+import LinksWrapper from './dashboard/LinksWrapper';
 import AddInfo from './dashboard/AddInfo';
+import InfoWrapper from './dashboard/InfoWrapper';
 import SetRate from './dashboard/SetRate';
+import SetRateWrapper from './dashboard/SetRateWrapper';
 import BrowseWrapper from './browse/BrowseWrapper';
 import ProfilePageWrapper from './browse/ProfilePageWrapper';
 class App extends Component {
@@ -40,25 +46,33 @@ class App extends Component {
             <Route
               exact
               path="/dashboard/sensei/schedule"
-              component={SenseiAvailability}
+              component={AvailabilityWrapper}
             />
             <Route
               exact
               path="/dashboard/sensei/expertise"
-              component={SelectSpecialization}
+              component={ExpertiseWrapper}
             />
             <Route
               exact
-              path="sensei/dashboard/services"
-              component={SelectServices}
+              path="/dashboard/sensei/services"
+              component={ServicesWrapper}
             />
             <Route
               exact
-              path="dashboard/sensei/links"
-              component={SelectLinks}
+              path="/dashboard/sensei/links"
+              component={LinksWrapper}
             />
-            <Route exact path="/dashboard/sensei/info" component={AddInfo} />
-            <Route exact path="/dashboard/sensei/rate" component={SetRate} />
+            <Route
+              exact
+              path="/dashboard/sensei/info"
+              component={InfoWrapper}
+            />
+            <Route
+              exact
+              path="/dashboard/sensei/rate"
+              component={SetRateWrapper}
+            />
             <Route exact path="/browse" component={BrowseWrapper} />
             <Route path="/sensei/:senseiId" component={ProfilePageWrapper} />
           </div>

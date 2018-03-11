@@ -25,12 +25,22 @@ class SenseiAvailability extends Component {
         <Grid.Row>
           <Grid.Column width={6}>
             <Header as="h1" icon>
-              <Icon name="calendar" />
+              <Icon size="massive" name="calendar" />
               <Header.Content>Add windows of availability</Header.Content>
             </Header>
           </Grid.Column>
         </Grid.Row>
         <Divider />
+        <Grid.Row>
+          <Grid.Column>
+            <Header as="h2">
+              A window has a start and end time in a day.
+              <Header.Subheader>
+                Choose as many windows in as many days as you would like.
+              </Header.Subheader>
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
         <Grid.Row>
           <Grid.Column width={5}>
             <WindowSelector />

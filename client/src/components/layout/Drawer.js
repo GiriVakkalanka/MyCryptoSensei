@@ -47,19 +47,19 @@ class Drawer extends Component {
             <div style={{ color: 'yellow' }}>Expertise</div>
           </Menu.Item>
           <Menu.Item
-            onClick={() => this.props.history.push('dashboard/sensei/rate')}
+            onClick={() => this.props.history.push('/dashboard/sensei/rate')}
           >
             <Icon color="yellow" name="dollar" />
             <div style={{ color: 'yellow' }}>Rate</div>
           </Menu.Item>
           <Menu.Item
-            onClick={() => this.props.history.push('dashboard/sensei/info')}
+            onClick={() => this.props.history.push('/dashboard/sensei/info')}
           >
             <Icon color="yellow" name="info circle" />
             <div style={{ color: 'yellow' }}>Info</div>
           </Menu.Item>
           <Menu.Item
-            onClick={() => this.props.history.push('dashboard/sensei/links')}
+            onClick={() => this.props.history.push('/dashboard/sensei/links')}
           >
             <Icon color="yellow" name="users" />
             <div style={{ color: 'yellow' }}>Links</div>

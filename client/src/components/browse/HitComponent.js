@@ -84,6 +84,7 @@ class HitComponent extends Component {
           to={`/sensei/${this.props.id}`}
           color="yellow"
           floated="right"
+          onClick={() => this.handleClick()}
         >
           <div style={{ color: 'black' }}>See availability</div>
         </Button>

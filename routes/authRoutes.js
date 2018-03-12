@@ -195,4 +195,13 @@ module.exports = app => {
     });
     res.send('hi');
   });
+
+  app.get('/api/get_sensei_page', requireLogin, async (req, res) => {
+    //console.log('reached');
+    const { key } = req.query;
+    //console.log(req.query);
+    const senseiRecord = await User.findOne({ _id: key });
+    console.log(senseiRecord);
+    res.send(senseiRecord);
+  });
 };

@@ -5,6 +5,9 @@ import * as actions from '../../actions';
 import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
 
 class ProfilePage extends Component {
+  componentDidMount() {
+    console.log(this.props.senseiPage);
+  }
   render() {
     return (
       <div>
@@ -14,8 +17,8 @@ class ProfilePage extends Component {
   }
 }
 
-function mapStateToProps({ application }) {
-  return { application };
+function mapStateToProps({ senseiPage }) {
+  return { senseiPage };
 }
 
 export default connect(mapStateToProps, actions)(ProfilePage);

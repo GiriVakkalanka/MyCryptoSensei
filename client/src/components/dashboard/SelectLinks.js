@@ -12,6 +12,8 @@ import {
   Divider,
   Button
 } from 'semantic-ui-react';
+import DashboardHeader from './DashboardHeader';
+import DashboardNavigator from './DashboardNavigator';
 
 class SelectLinks extends Component {
   componentDidMount() {
@@ -36,14 +38,14 @@ class SelectLinks extends Component {
   render() {
     return (
       <Grid container>
+        <DashboardHeader
+          header="Add Links"
+          title="What do you do?"
+          subtitle="Add any three links that best describe your work"
+          icon="suitcase"
+        />
         <Grid.Row>
           <Grid.Column width={9}>
-            <Header as="h2">
-              What do you do?
-              <Header.Subheader>
-                Add any three links that best describe your work.
-              </Header.Subheader>
-            </Header>
             <Segment>
               <Form>
                 <Form.Field>
@@ -88,10 +90,15 @@ class SelectLinks extends Component {
                 </Form.Field>
               </Form>
             </Segment>
-            <Button onClick={() => this.handleClick()}>Save</Button>
           </Grid.Column>
         </Grid.Row>
-        <Divider />
+        <DashboardNavigator
+          prev="/dashboard/sensei/info"
+          next="/"
+          handleNext={() => {
+            this.props.saveLinks(this.props.links);
+          }}
+        />
       </Grid>
     );
   }

@@ -5,6 +5,8 @@ import * as actions from '../../actions';
 import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import WindowSelector from './WindowSelector';
 import WindowList from './WindowList';
+import DashboardHeader from './DashboardHeader';
+import DashboardNavigator from './DashboardNavigator';
 //import DatePicker from 'react-datepicker';
 //import moment from 'moment';
 //import 'react-datepicker/dist/react-datepicker.css';
@@ -21,35 +23,29 @@ class SenseiAvailability extends Component {
   }
   render() {
     return (
-      <Grid stackable container>
-        <Grid.Row>
-          <Grid.Column width={6}>
-            <Header as="h1" icon>
-              <Icon size="massive" name="calendar" />
-              <Header.Content>Add windows of availability</Header.Content>
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-        <Divider />
-        <Grid.Row>
-          <Grid.Column>
-            <Header as="h2">
-              A window has a start and end time in a day.
-              <Header.Subheader>
-                Choose as many windows in as many days as you would like.
-              </Header.Subheader>
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={5}>
-            <WindowSelector />
-          </Grid.Column>
-          <Grid.Column width={8}>
-            <WindowList />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <div>
+        <DashboardHeader
+          header="Add Availability"
+          title="A window has a start and end time in a day"
+          subtitle="Choose as many windows in as many days as you would like"
+          icon="calendar"
+        />
+        <Grid stackable container>
+          <Grid.Row>
+            <Grid.Column width={5}>
+              <WindowSelector />
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <WindowList />
+            </Grid.Column>
+          </Grid.Row>
+
+          <DashboardNavigator
+            prev="/dashboard/sensei/sessions"
+            next="/dashboard/sensei/services"
+          />
+        </Grid>
+      </div>
     );
   }
 }

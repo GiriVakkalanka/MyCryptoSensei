@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import ChipInput from 'material-ui-chip-input';
+import DashboardHeader from './DashboardHeader';
+import DashboardNavigator from './DashboardNavigator';
 
 class SelectSpecialization extends Component {
   handleAddChip(chip) {
@@ -27,27 +29,30 @@ class SelectSpecialization extends Component {
 
   render() {
     return (
-      <Grid stackable container>
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as="h1" icon>
-              <Icon name="suitcase" />
-              <Header.Content>Add your areas of specialization</Header.Content>
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-        <Divider />
-        <Grid.Row>
-          <ChipInput
-            value={this.props.auth ? this.props.auth.specialization : []}
-            onRequestAdd={chip => this.handleAddChip(chip)}
-            onRequestDelete={(chip, index) =>
-              this.handleDeleteChip(chip, index)}
-            hintText="Type your areas of specialization here. Press Enter after each one."
-            fullWidth={true}
+      <div>
+        <DashboardHeader
+          header="Add Expertise"
+          title="Enter your areas of expertise"
+          subtitle="Enter subject matter in the field below and press enter to save the tag"
+          icon="star"
+        />
+        <Grid stackable container>
+          <Grid.Row>
+            <ChipInput
+              value={this.props.auth ? this.props.auth.specialization : []}
+              onRequestAdd={chip => this.handleAddChip(chip)}
+              onRequestDelete={(chip, index) =>
+                this.handleDeleteChip(chip, index)}
+              hintText="ex. ethereum, litecoin, ERC20, SegWit, etc. "
+              fullWidth={true}
+            />
+          </Grid.Row>
+          <DashboardNavigator
+            prev="/dashboard/sensei/services"
+            next="/dashboard/sensei/rate"
           />
-        </Grid.Row>
-      </Grid>
+        </Grid>
+      </div>
     );
   }
 }

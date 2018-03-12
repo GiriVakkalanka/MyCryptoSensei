@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ChipInput from 'material-ui-chip-input';
 import DashboardHeader from './DashboardHeader';
 import DashboardNavigator from './DashboardNavigator';

@@ -4,16 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import DashboardHeader from './DashboardHeader';
 import DashboardNavigator from './DashboardNavigator';
-import {
-  Segment,
-  Grid,
-  Header,
-  Form,
-  Input,
-  Button,
-  Divider,
-  Label
-} from 'semantic-ui-react';
+import { Segment, Grid, Form, Input, Label } from 'semantic-ui-react';
 
 class SetRate extends Component {
   handleClick() {

@@ -10,7 +10,10 @@ class NavHeader extends Component {
   state = { visible: true };
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
-  //render header items
+  // //render header items
+  // handleLoginModal(){
+  //
+  // }
 
   renderLoginButton() {
     return this.props.auth ? (

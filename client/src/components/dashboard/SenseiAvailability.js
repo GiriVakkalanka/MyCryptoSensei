@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Grid, Header, Icon, Divider } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import WindowSelector from './WindowSelector';
 import WindowList from './WindowList';
 import DashboardHeader from './DashboardHeader';

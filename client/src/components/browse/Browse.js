@@ -2,20 +2,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Input,
-  Divider,
-  Button,
-  Image
-} from 'semantic-ui-react';
+import { Grid, Header, Divider, Button, Image } from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import HitComponent from './HitComponent';
-import ServiceGallery from './ServiceGallery';
+//import ServiceGallery from './ServiceGallery';
 import Logo from '../../images/sensei_1a.png';
 
 const Hit = ({ hit }) => (

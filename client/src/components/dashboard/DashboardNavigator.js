@@ -2,15 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Button,
-  Divider
-} from 'semantic-ui-react';
+import { Grid, Button, Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class DashboardNavigator extends Component {

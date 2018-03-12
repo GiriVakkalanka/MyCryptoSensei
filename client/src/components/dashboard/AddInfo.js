@@ -4,15 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import DashboardHeader from './DashboardHeader';
 import DashboardNavigator from './DashboardNavigator';
-import {
-  Segment,
-  Grid,
-  Header,
-  Form,
-  Input,
-  Button,
-  Divider
-} from 'semantic-ui-react';
+import { Segment, Grid, Form, Input } from 'semantic-ui-react';
 
 class AddInfo extends Component {
   handleClick() {

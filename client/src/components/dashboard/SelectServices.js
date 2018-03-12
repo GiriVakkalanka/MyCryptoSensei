@@ -3,15 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import DashboardNavigator from './DashboardNavigator';
-import {
-  Segment,
-  Grid,
-  Header,
-  Item,
-  Divider,
-  Button,
-  Icon
-} from 'semantic-ui-react';
+import { Segment, Grid, Item } from 'semantic-ui-react';
 import DashboardHeader from './DashboardHeader';
 import ServiceItem from './ServiceItem';
 class SelectServices extends Component {

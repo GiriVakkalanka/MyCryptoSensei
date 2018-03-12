@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Drawer from '../layout/Drawer';
-import Browse from './Browse';
+//import Browse from './Browse';
 import ProfilePage from './ProfilePage';
 
 class ProfilePageWrapper extends Component {

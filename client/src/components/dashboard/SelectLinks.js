@@ -3,15 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import { withRouter } from 'react-router-dom';
-import {
-  Segment,
-  Grid,
-  Header,
-  Form,
-  Input,
-  Divider,
-  Button
-} from 'semantic-ui-react';
+import { Segment, Grid, Form, Input } from 'semantic-ui-react';
 import DashboardHeader from './DashboardHeader';
 import DashboardNavigator from './DashboardNavigator';
 

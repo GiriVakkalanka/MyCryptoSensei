@@ -23,7 +23,7 @@ class Login extends Component {
             </Header>
             <Segment>
               <Grid.Row>
-                <Button fluid color="facebook">
+                <Button href="/auth/facebook" fluid color="facebook">
                   <Icon name="facebook" /> Facebook
                 </Button>
               </Grid.Row>
@@ -35,7 +35,7 @@ class Login extends Component {
               </Grid.Row>
               <Divider horizontal>Or</Divider>
               <Grid.Row>
-                <Button fluid color="linkedin">
+                <Button href="/auth/linkedin" fluid color="linkedin">
                   <Icon name="linkedin" /> LinkedIn
                 </Button>
               </Grid.Row>

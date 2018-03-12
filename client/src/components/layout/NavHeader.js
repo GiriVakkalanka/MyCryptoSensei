@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 
-import { Menu, Icon } from 'semantic-ui-react';
+import { Menu, Icon, Modal } from 'semantic-ui-react';
+import Login from '../apply/Login';
 
 class NavHeader extends Component {
   state = { visible: true };
@@ -22,7 +23,7 @@ class NavHeader extends Component {
         <Icon color="yellow" name="user circle outline" />
       </Menu.Item>
     ) : (
-      <Menu.Item position="right" href="/auth/google">
+      <Menu.Item position="right">
         Log in/Sign up
         <Icon color="yellow" name="user outline" />
       </Menu.Item>
@@ -50,6 +51,16 @@ class NavHeader extends Component {
     );
   }
 
+  renderModalLoginButton() {
+    return (
+      <Modal trigger={this.renderLoginButton()}>
+        <Modal.Content>
+          <Login />
+        </Modal.Content>
+      </Modal>
+    );
+  }
+
   render() {
     return (
       <Menu
@@ -70,7 +81,7 @@ class NavHeader extends Component {
           />
         </Menu.Item>
         {this.renderApplyButton()}
-        {this.renderLoginButton()}
+        {this.renderModalLoginButton()}
         {this.renderAdminButton()}
       </Menu>
     );

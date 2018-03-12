@@ -24,6 +24,33 @@ module.exports = app => {
     }
   );
 
+  app.get(
+    '/auth/facebook',
+    passport.authenticate('facebook', {
+      scope: ['email']
+    })
+  );
+
+  app.get(
+    '/auth/facebook/callback',
+    passport.authenticate('facebook'),
+    (req, res) => {
+      res.redirect('/');
+    }
+  );
+
+  app.get('/auth/linkedin', passport.authenticate('linkedin'), (req, res) => {
+    console.log('Shouldnt be called');
+  });
+
+  app.get(
+    '/auth/linkedin/callback',
+    passport.authenticate('linkedin'),
+    (req, res) => {
+      res.redirect('/');
+    }
+  );
+
   // app.get(
   //   '/auth/googleApplication',
   //   passport.authenticate('google', {

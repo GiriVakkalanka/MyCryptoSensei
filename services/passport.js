@@ -3,9 +3,9 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 const User = mongoose.model('users');
-const algoliasearch = require('algoliasearch');
-const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
-const index = client.initIndex('KoinVetDev');
+// const algoliasearch = require('algoliasearch');
+// const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
+// const index = client.initIndex('KoinVetDev');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -46,16 +46,16 @@ passport.use(
         pic: profile.photos[0].value
       }).save();
 
-      const algoliaObjectID = user.id;
-      user.objectID = user.id;
-      user.save();
-
-      index.addObject(user, function(err, content) {
-        if (err) {
-          console.log(err);
-        }
-        console.log(content);
-      });
+      // const algoliaObjectID = user.id;
+      // user.objectID = user.id;
+      // user.save();
+      //
+      // index.addObject(user, function(err, content) {
+      //   if (err) {
+      //     console.log(err);
+      //   }
+      //   console.log(content);
+      // });
 
       done(null, user);
     }

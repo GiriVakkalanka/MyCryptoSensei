@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Application = mongoose.model('application');
 const User = mongoose.model('users');
 const requireLogin = require('../middlewares/requireLogin');
+const keys = require('../config/keys');
+const algoliasearch = require('algoliasearch');
+const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
+const index = client.initIndex('KoinVetDev');
 
 module.exports = app => {
   app.get('/api/get-new-applications', async (req, res) => {
@@ -27,14 +31,24 @@ module.exports = app => {
     const acceptedApplication = await Application.findOne({
       _id: key.applicationId
     });
+
     acceptedApplication.accepted = true;
     await acceptedApplication.save();
 
     const acceptedUser = await User.findOne({ _id: key.userId });
+    const algoliaObjectID = key.userId;
+    acceptedUser.objectID = key.userId;
+
     acceptedUser.sensei = true;
     acceptedUser.services = acceptedApplication.services;
     acceptedUser.links = acceptedApplication.links;
     await acceptedUser.save();
+    index.addObject(acceptedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
 
     const applications = await Application.find({ accepted: null });
     res.send(applications);

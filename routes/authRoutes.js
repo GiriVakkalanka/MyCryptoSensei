@@ -24,20 +24,20 @@ module.exports = app => {
     }
   );
 
-  app.get(
-    '/auth/googleApplication',
-    passport.authenticate('google', {
-      scope: ['profile', 'email']
-    })
-  );
-
-  app.get(
-    '/auth/google/callbackApplication',
-    passport.authenticate('google'),
-    (req, res) => {
-      res.redirect('/apply');
-    }
-  );
+  // app.get(
+  //   '/auth/googleApplication',
+  //   passport.authenticate('google', {
+  //     scope: ['profile', 'email']
+  //   })
+  // );
+  //
+  // app.get(
+  //   '/auth/google/callbackApplication',
+  //   passport.authenticate('google'),
+  //   (req, res) => {
+  //     res.redirect('/apply');
+  //   }
+  // );
 
   app.get('/api/logout', (req, res) => {
     req.logout();

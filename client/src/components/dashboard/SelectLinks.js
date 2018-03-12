@@ -42,7 +42,7 @@ class SelectLinks extends Component {
           header="Add Links"
           title="What do you do?"
           subtitle="Add any three links that best describe your work"
-          icon="suitcase"
+          icon="chain"
         />
         <Grid.Row>
           <Grid.Column width={9}>

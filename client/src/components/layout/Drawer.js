@@ -61,7 +61,7 @@ class Drawer extends Component {
           <Menu.Item
             onClick={() => this.props.history.push('/dashboard/sensei/links')}
           >
-            <Icon color="yellow" name="users" />
+            <Icon color="yellow" name="chain" />
             <div style={{ color: 'yellow' }}>Links</div>
           </Menu.Item>
 

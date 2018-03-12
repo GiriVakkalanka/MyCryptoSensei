@@ -38,7 +38,7 @@ class AddInfo extends Component {
           header="Add Info"
           title="Basic information"
           subtitle="Tell your potential clients where you are based and what you do."
-          icon="suitcase"
+          icon="info circle"
         />
         <Grid container>
           <Grid.Row>

@@ -23,6 +23,10 @@ module.exports = app => {
       dateSubmitted: Date.now()
     });
     await application.save();
+
+    const appliedUser = await User.findOne({ _id: req.user.id });
+    appliedUser.applied = true;
+    appliedUser.save();
     res.send(req.user);
   });
 
@@ -36,9 +40,10 @@ module.exports = app => {
     await acceptedApplication.save();
 
     const acceptedUser = await User.findOne({ _id: key.userId });
-    const algoliaObjectID = key.userId;
+    console.log(acceptedUser);
+    //const algoliaObjectID = key.userId;
     acceptedUser.objectID = key.userId;
-
+    acceptedUser.accepted = true;
     acceptedUser.sensei = true;
     acceptedUser.services = acceptedApplication.services;
     acceptedUser.links = acceptedApplication.links;

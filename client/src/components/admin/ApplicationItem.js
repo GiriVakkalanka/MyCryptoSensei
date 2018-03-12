@@ -46,7 +46,7 @@ class ApplicationItem extends Component {
       <Item>
         <Item.Image size="tiny" src={this.props.image} />
         <Item.Content>
-          <Item.Header>{this.props.name}</Item.Header>
+          <Item.Header>{this.props.fullName}</Item.Header>
           <Item.Description>{this.props.date}</Item.Description>
           <div>{this.renderLinks()}</div>
           <Item.Extra>{this.renderButtons()}</Item.Extra>

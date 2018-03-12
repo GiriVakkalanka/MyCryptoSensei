@@ -17,12 +17,13 @@ class SubmittedApplications extends Component {
         application.links.linkTwo,
         application.links.linkThree
       ];
+      console.log(application);
       return (
         <ApplicationItem
           key={application.user._id}
           applicationId={application._id}
           userId={application.user._id}
-          name={application.user.fullName}
+          fullName={application.user.fullName}
           image={application.user.pic}
           links={linkArray}
         />

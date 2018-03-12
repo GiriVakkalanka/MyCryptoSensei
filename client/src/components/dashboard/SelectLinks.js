@@ -47,7 +47,9 @@ class SelectLinks extends Component {
                     iconPosition="left"
                     placeholder="Add in any link. GitHub, LinkedIn, Personal page, etc."
                     defaultValue={
-                      this.props.auth ? this.props.auth.links.linkOne : ''
+                      this.props.auth && this.props.auth.links
+                        ? this.props.auth.links.linkOne
+                        : ''
                     }
                     onChange={e => this.handleChange(e, 1)}
                   />

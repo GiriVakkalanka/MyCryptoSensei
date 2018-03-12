@@ -48,6 +48,9 @@ passport.use(
         pic: profile.photos[0].value
       }).save();
 
+      user.objectID = user.id;
+      user.save();
+
       // const algoliaObjectID = user.id;
       // user.objectID = user.id;
       // user.save();
@@ -88,7 +91,7 @@ passport.use(
       const user = await new User({
         facebookId: profile.id,
         email: profile.emails[0].value,
-        name: profile.displayName,
+        fullName: profile.displayName,
         pic: profile.photos[0].value
       }).save();
       //console.log(user);
@@ -123,7 +126,7 @@ passport.use(
         const user = await new User({
           linkedinId: profile.id,
           email: profile.emails[0].value,
-          name: profile.displayName,
+          fullName: profile.displayName,
           pic: profile.photos[0].value
         }).save();
         //console.log(user);

@@ -13,14 +13,14 @@ const Hit = ({ hit }) => (
   //   <h1>{hit.email}</h1>
   // </div>
   <HitComponent
-    name={hit.name}
+    name={hit.fullName}
     pic={hit.pic}
     rate={hit.rate}
     desc={hit.description}
     city={hit.city}
     country={hit.country}
     specialization={hit.specialization}
-    expertise={hit.expertise}
+    expertise={hit.services}
     links={hit.links}
     id={hit._id}
   />

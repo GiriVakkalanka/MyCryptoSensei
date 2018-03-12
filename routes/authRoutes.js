@@ -106,6 +106,12 @@ module.exports = app => {
     const userWanted = await User.findOne({ _id: req.user.id });
     userWanted.windows.push(windowRecord);
     const updatedUser = await userWanted.save();
+    index.saveObject(updatedUser, function(err, content) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(content);
+    });
     console.log(timeWindow);
     res.send(updatedUser);
   });

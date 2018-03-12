@@ -17,7 +17,8 @@ import {
   CHANGE_RATE,
   GET_SENSEI_PAGE,
   CLEAR_SENSEI_PAGE,
-  TOGGLE_DRAWER
+  TOGGLE_DRAWER,
+  SELECT_WINDOW
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -157,4 +158,8 @@ export const getSenseiPage = info => async dispatch => {
 
 export const toggleDrawer = () => {
   return { type: TOGGLE_DRAWER, payload: null };
+};
+
+export const selectWindow = window => {
+  return { type: SELECT_WINDOW, payload: window };
 };

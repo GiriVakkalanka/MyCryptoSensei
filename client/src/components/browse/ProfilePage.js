@@ -2,7 +2,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
+import {
+  Card,
+  Segment,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Divider
+} from 'semantic-ui-react';
+import ScheduleRequest from './ScheduleRequest';
+import ProfileSectionHeader from './ProfileSectionHeader';
 
 class ProfilePage extends Component {
   componentDidMount() {
@@ -10,9 +20,35 @@ class ProfilePage extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Generic Component</h1>
-      </div>
+      <Grid stackable container>
+        <Grid.Row>
+          <Grid.Column width={3}>
+            <Image
+              size="tiny bordered rounded"
+              src={this.props.senseiPage.pic}
+            />
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <Header size="huge" as="h1">
+              {this.props.senseiPage.fullName}
+            </Header>
+            <p>
+              {this.props.senseiPage.city}, {this.props.senseiPage.country}
+            </p>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <Header as="h4">{this.props.senseiPage.description}</Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Divider />
+        <Grid.Row>
+          <Grid.Column>
+            <ScheduleRequest />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
   }
 }

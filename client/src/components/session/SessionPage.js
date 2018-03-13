@@ -7,6 +7,7 @@ import DashboardHeader from '../dashboard/DashboardHeader';
 import SubmitPayment from './SubmitPayment';
 import SubmitReview from './SubmitReview';
 import moment from 'moment';
+import LeaveReview from './LeaveReview';
 class SessionPage extends Component {
   renderPage() {
     if (!this.props.sessionPage.paid) {
@@ -44,7 +45,25 @@ class SessionPage extends Component {
         </div>
       );
     } else {
-      return <p>paid</p>;
+      const headerText = moment(this.props.sessionPage.timeStarted).fromNow();
+      return (
+        <div>
+          <DashboardHeader
+            header="Session Page"
+            title={`Session ran ${headerText}`}
+            subtitle="Chat here to coordinate logistics. Chat expires 24 hours after completion. Please leave review here"
+            icon="hourglass end"
+          />
+
+          <Grid stackable container>
+            <Grid.Row>
+              <Grid.Column width={14}>
+                <LeaveReview />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+      );
     }
   }
   render() {

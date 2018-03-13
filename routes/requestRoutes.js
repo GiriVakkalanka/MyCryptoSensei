@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const Request = mongoose.model('requests');
 const User = mongoose.model('users');
+const Session = mongoose.model('sessions');
 
 module.exports = app => {
   app.post('/api/submit-request', requireLogin, async (req, res) => {
@@ -48,14 +49,44 @@ module.exports = app => {
     const request = await Request.findOne({ _id: requestId });
     request.accepted = true;
     request.dateAccepted = Date.now();
+    await request.save();
+    const clientRecord = await User.findOne({ _id: request._client });
 
-    res.send('hi');
+    const session = new Session({
+      _request: request._id,
+      expert: req.user,
+      client: clientRecord,
+      service: request.service,
+      rate: req.user.rate,
+      dateCreated: Date.now(),
+      dateStarted: request.dateRequested,
+      timeStarted: request.timeRequested
+    });
+
+    await session.save();
+    console.log(session);
+
+    const receivedRequests = await Request.find({ _sensei: req.user.id });
+    const sentRequests = await Request.find({ _client: req.user.id });
+    const requests = {
+      receivedRequests,
+      sentRequests
+    };
+    res.send(requests);
   });
 
   app.post('/api/deny-request', requireLogin, async (req, res) => {
     const { requestId } = req.body;
     const request = await Request.findOne({ _id: requestId });
     request.accepted = false;
-    res.send('hi');
+    request.save();
+
+    const receivedRequests = await Request.find({ _sensei: req.user.id });
+    const sentRequests = await Request.find({ _client: req.user.id });
+    const requests = {
+      receivedRequests,
+      sentRequests
+    };
+    res.send(requests);
   });
 };

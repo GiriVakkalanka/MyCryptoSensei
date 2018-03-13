@@ -22,7 +22,7 @@ class ServicesOffered extends Component {
       switch (service) {
         case 'Whitepaper Analysis':
           return (
-            <Grid.Column width={3}>
+            <Grid.Column key={service} width={3}>
               <Header style={{ marginRight: 15 }} as="h5" icon>
                 <Icon name="terminal" />
                 <Header.Content>Whitepaper Analysis</Header.Content>
@@ -31,7 +31,7 @@ class ServicesOffered extends Component {
           );
         case 'Business Analysis':
           return (
-            <Grid.Column width={3}>
+            <Grid.Column key={service} width={3}>
               <Header as="h5" icon>
                 <Icon name="line chart" />
                 <Header.Content>Business Analysis</Header.Content>
@@ -40,7 +40,7 @@ class ServicesOffered extends Component {
           );
         case 'Tax Consultation':
           return (
-            <Grid.Column width={3}>
+            <Grid.Column key={service} width={3}>
               <Header as="h5" icon>
                 <Icon name="calculator" />
                 <Header.Content>Tax Consultation</Header.Content>
@@ -49,7 +49,7 @@ class ServicesOffered extends Component {
           );
         case 'Onboarding Guidance':
           return (
-            <Grid.Column width={3}>
+            <Grid.Column key={service} width={3}>
               <Header as="h5" icon>
                 <Icon name="bitcoin" />
                 <Header.Content>Beginner Onboarding</Header.Content>
@@ -64,7 +64,7 @@ class ServicesOffered extends Component {
   renderExpertiseChips() {
     return _.map(this.props.senseiPage.specialization, expertise => {
       return (
-        <Grid.Column width={1}>
+        <Grid.Column key={expertise} width={1}>
           <Chip style={styles.chip} key={expertise}>
             {expertise}
           </Chip>

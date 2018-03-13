@@ -21,7 +21,7 @@ class RequestWindowList extends Component {
   }
   render() {
     return (
-      <div style={{ maxHeight: '210', overflow: 'auto' }}>
+      <div style={{ maxHeight: 230, overflow: 'auto' }}>
         <Segment>
           <Item.Group divided>{this.renderList()}</Item.Group>
         </Segment>

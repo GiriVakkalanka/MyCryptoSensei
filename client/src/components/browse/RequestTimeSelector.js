@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
-import { Button, Segment, Header } from 'semantic-ui-react';
+import { Button, Segment, Header, Modal } from 'semantic-ui-react';
+import MakeRequest from './MakeRequest';
 
 import moment from 'moment';
 
@@ -12,6 +13,7 @@ class RequestTimeSelector extends Component {
   componentDidMount() {
     console.log(this.props.selectedWindow);
   }
+
   handleDate(event, date) {
     //const today = Date.now();
     //console.log(typeof today);
@@ -25,14 +27,23 @@ class RequestTimeSelector extends Component {
     this.props.changeDate(pickedDate);
   }
 
-  handleTime(event, time, start) {
+  handleTime(event, time) {
     const pickedTime = new Date(time);
 
-    if (start) {
-      this.props.changeStarttime(pickedTime);
-    } else {
-      this.props.changeEndtime(pickedTime);
-    }
+    console.log(pickedTime);
+  }
+
+  renderModalButton() {
+    return (
+      <Modal
+        size="small"
+        trigger={<Button floated="right">Request session</Button>}
+      >
+        <Modal.Content>
+          <MakeRequest />
+        </Modal.Content>
+      </Modal>
+    );
   }
 
   handleSave() {
@@ -62,9 +73,7 @@ class RequestTimeSelector extends Component {
           hintText="Select time here"
           onChange={(event, time) => this.handleTime(event, time, false)}
         />
-        <Button floated="right" onClick={() => this.handleSave()}>
-          Request session
-        </Button>
+        <div>{this.renderModalButton()}</div>
       </Segment>
     );
   }

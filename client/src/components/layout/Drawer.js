@@ -149,7 +149,6 @@ class Drawer extends Component {
           icon={false}
           vertical
           inverted
-          fixed
           animation="push"
         >
           <Menu.Item onClick={() => this.props.toggleDrawer()}>

@@ -14,7 +14,7 @@ import {
 import ScheduleRequest from './ScheduleRequest';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import ServicesOffered from './ServicesOffered';
-
+import MakeRequest from './MakeRequest';
 const styles = {
   chip: {
     margin: 4
@@ -87,7 +87,9 @@ class ProfilePage extends Component {
         <Grid.Row>
           <Grid.Column width={2}>
             <Image
-              size="tiny bordered rounded"
+              size="tiny"
+              bordered
+              rounded
               src={this.props.senseiPage.pic}
             />
           </Grid.Column>

@@ -63,15 +63,7 @@ class NavHeader extends Component {
 
   render() {
     return (
-      <Menu
-        style={{ marginBottom: 50 }}
-        attached="top"
-        borderless
-        fitted
-        fixed
-        visible={true}
-        inverted
-      >
+      <Menu style={{ marginBottom: 50 }} attached="top" borderless inverted>
         <Menu.Item onClick={() => this.props.toggleDrawer()}>
           <div style={{ color: 'yellow' }}>Menu</div>
           <Icon

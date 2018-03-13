@@ -12,6 +12,7 @@ import drawerReducer from './drawerReducer';
 import selectedWindowReducer from './selectedWindowReducer';
 import requestReducer from './requestReducer';
 import sessionPageReducer from './sessionPageReducer';
+import sessionReducer from './sessionReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -33,5 +34,6 @@ export default combineReducers({
   drawer: drawerReducer,
   selectedWindow: selectedWindowReducer,
   requests: requestReducer,
-  sessionPage: sessionPageReducer
+  sessionPage: sessionPageReducer,
+  sessions: sessionReducer
 });

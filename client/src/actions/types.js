@@ -27,3 +27,4 @@ export const FETCH_REQUESTS = 'fetch_requests';
 export const ACCEPT_REQUEST = 'accept_request';
 export const DENY_REQUEST = 'deny_request';
 export const GET_SESSION_PAGE = 'get_session_page';
+export const FETCH_SESSIONS = 'fetch_sessions';

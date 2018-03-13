@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Drawer from '../layout/Drawer';
-import Session from './Session';
+import SessionPage from './SessionPage';
 
 class SessionWrapper extends Component {
   componentDidMount() {
@@ -11,7 +11,7 @@ class SessionWrapper extends Component {
   render() {
     return (
       <div>
-        <Drawer pusher={<Session />} />
+        <Drawer pusher={<SessionPage />} />
       </div>
     );
   }

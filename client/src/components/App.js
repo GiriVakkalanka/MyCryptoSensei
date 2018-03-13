@@ -30,6 +30,7 @@ import BrowseWrapper from './browse/BrowseWrapper';
 import ProfilePageWrapper from './browse/ProfilePageWrapper';
 import RequestsWrapper from './dashboard/RequestsWrapper';
 import SessionWrapper from './session/SessionWrapper';
+import SessionsWrapper from './dashboard/SessionsWrapper';
 
 class App extends Component {
   componentDidMount() {
@@ -50,6 +51,11 @@ class App extends Component {
               exact
               path="/dashboard/sensei/requests"
               component={RequestsWrapper}
+            />
+            <Route
+              exact
+              path="/dashboard/sensei/sessions"
+              component={SessionsWrapper}
             />
             <Route
               exact

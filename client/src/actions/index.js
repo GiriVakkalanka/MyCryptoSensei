@@ -22,7 +22,8 @@ import {
   FETCH_REQUESTS,
   ACCEPT_REQUEST,
   DENY_REQUEST,
-  GET_SESSION_PAGE
+  GET_SESSION_PAGE,
+  FETCH_SESSIONS
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -192,4 +193,9 @@ export const getSessionPage = requestId => async dispatch => {
   //console.log(sessionId);
   const res = await axios.get('/api/get-session-page', { params: requestId });
   dispatch({ type: GET_SESSION_PAGE, payload: res.data });
+};
+
+export const fetchSessions = () => async dispatch => {
+  const res = await axios.get('/api/get-sessions');
+  dispatch({ type: FETCH_SESSIONS, payload: res.data });
 };

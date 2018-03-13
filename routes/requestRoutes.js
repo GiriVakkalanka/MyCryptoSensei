@@ -54,9 +54,12 @@ module.exports = app => {
 
     const session = new Session({
       _request: request._id,
+      _expertId: req.user.id,
+      _clientId: request._client,
       expert: req.user,
       client: clientRecord,
       service: request.service,
+      note: request.note,
       rate: req.user.rate,
       dateCreated: Date.now(),
       dateStarted: request.dateRequested,
@@ -98,5 +101,16 @@ module.exports = app => {
     const sessionRecord = await Session.findOne({ _request: requestId });
     console.log(sessionRecord);
     res.send(sessionRecord);
+  });
+
+  app.get('/api/get-sessions', requireLogin, async (req, res) => {
+    const requestedSessions = await Session.find({ _clientId: req.user.id });
+    const acceptedSessions = await Session.find({ _expertId: req.user.id });
+    const sessions = {
+      requestedSessions,
+      acceptedSessions
+    };
+
+    res.send(sessions);
   });
 };

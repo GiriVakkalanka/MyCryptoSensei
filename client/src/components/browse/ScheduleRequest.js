@@ -14,7 +14,7 @@ class ScheduleRequest extends Component {
       <div>
         <ProfileSectionHeader
           title="Availability"
-          subtitle="Choose a time in the available windows to make an appointment reqest to the sensei."
+          subtitle="Choose a time in the available windows to request an appointment with the sensei."
           icon="calendar"
         />
         <Grid stackable container>

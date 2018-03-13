@@ -23,15 +23,21 @@ class RequestWindowListItem extends Component {
           </Header>
         </Item.Image>
         <Item.Content>
-          <Item.Header>
+          <Header>
+            <Header.Subheader>Available on</Header.Subheader>
             {moment(this.props.date).format('dddd, MMMM Do YYYY')}
-          </Item.Header>
-          <Item.Header>
-            {moment(this.props.startTime).format('h:mm A')} -{' '}
+          </Header>
+          <Header>
+            <Header.Subheader>From</Header.Subheader>
+            {moment(this.props.startTime).format('h:mm A')} to{' '}
             {moment(this.props.endTime).format('h:mm A')}
-          </Item.Header>
+          </Header>
           <Item.Extra>
-            <Button onClick={() => this.handleClick()} floated="right">
+            <Button
+              size="tiny"
+              onClick={() => this.handleClick()}
+              floated="right"
+            >
               Choose window
               <Icon name="right chevron" />
             </Button>

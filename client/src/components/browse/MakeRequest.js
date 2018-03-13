@@ -23,12 +23,13 @@ class MakeRequest extends Component {
   }
   handleSubmit() {
     const request = {
+      sensei: this.props.senseiPage._id,
       service: this.state.service.value,
       note: this.state.note.value,
       date: this.props.selectedWindow.date,
       time: this.props.selectedWindow.startTime
     };
-    console.log(request);
+    this.props.submitRequest(request);
   }
   render() {
     const options = this.renderServiceOptions();

@@ -18,7 +18,13 @@ import {
   GET_SENSEI_PAGE,
   CLEAR_SENSEI_PAGE,
   TOGGLE_DRAWER,
-  SELECT_WINDOW
+  SELECT_WINDOW,
+  SUBMIT_REQUEST,
+  FETCH_SENT_REQUESTS,
+  FETCH_RECEIVED_REQUESTS,
+  FETCH_REQUESTS,
+  ACCEPT_REQUEST,
+  DENY_REQUEST
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -162,4 +168,34 @@ export const toggleDrawer = () => {
 
 export const selectWindow = window => {
   return { type: SELECT_WINDOW, payload: window };
+};
+
+export const submitRequest = request => async dispatch => {
+  const res = await axios.post('/api/submit-request', request);
+  dispatch({ type: SUBMIT_REQUEST, payload: res.data });
+};
+
+export const fetchRequests = () => async dispatch => {
+  const res = await axios.get('/api/get-requests');
+  dispatch({ type: FETCH_REQUESTS, payload: res.data });
+};
+
+export const fetchReceivedRequests = () => async dispatch => {
+  const res = await axios.get('/api/get-received-requests');
+  dispatch({ type: FETCH_RECEIVED_REQUESTS, payload: res.data });
+};
+
+export const fetchSentRequests = () => async dispatch => {
+  const res = await axios.get('/api/get-sent-requests');
+  dispatch({ type: FETCH_SENT_REQUESTS, payload: res.data });
+};
+
+export const acceptRequest = requestId => async dispatch => {
+  const res = await axios.post('/api/accept-request', requestId);
+  dispatch({ type: ACCEPT_REQUEST, payload: res.data });
+};
+
+export const denyRequest = requestId => async dispatch => {
+  const res = await axios.post('/api/deny-request', requestId);
+  dispatch({ type: DENY_REQUEST, payload: res.data });
 };

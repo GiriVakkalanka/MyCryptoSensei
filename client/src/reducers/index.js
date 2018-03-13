@@ -10,6 +10,7 @@ import rateReducer from './rateReducer';
 import senseiPageReducer from './senseiPageReducer';
 import drawerReducer from './drawerReducer';
 import selectedWindowReducer from './selectedWindowReducer';
+import requestReducer from './requestReducer';
 
 // const persistConfig = {
 //   key: 'root',
@@ -29,5 +30,6 @@ export default combineReducers({
   rate: rateReducer,
   senseiPage: senseiPageReducer,
   drawer: drawerReducer,
-  selectedWindow: selectedWindowReducer
+  selectedWindow: selectedWindowReducer,
+  requests: requestReducer
 });

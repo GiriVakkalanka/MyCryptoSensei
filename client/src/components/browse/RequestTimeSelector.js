@@ -60,7 +60,7 @@ class RequestTimeSelector extends Component {
     return (
       <Segment compact>
         <Header>
-          <Header.Subheader>Request an hour session on</Header.Subheader>
+          <Header.Subheader>Request an hour-long session on</Header.Subheader>
           {moment(this.props.selectedWindow.date).format('dddd, MMMM Do YYYY')}
         </Header>
         <Header>

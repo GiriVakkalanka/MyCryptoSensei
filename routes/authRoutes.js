@@ -201,7 +201,7 @@ module.exports = app => {
     const { key } = req.query;
     //console.log(req.query);
     const senseiRecord = await User.findOne({ _id: key });
-    console.log(senseiRecord);
+    //console.log(senseiRecord);
     res.send(senseiRecord);
   });
 };

@@ -82,7 +82,7 @@ module.exports = app => {
     const { requestId } = req.body;
     const request = await Request.findOne({ _id: requestId });
     request.accepted = false;
-    request.save();
+    await request.save();
 
     const receivedRequests = await Request.find({ _sensei: req.user.id });
     const sentRequests = await Request.find({ _client: req.user.id });
@@ -112,5 +112,14 @@ module.exports = app => {
     };
 
     res.send(sessions);
+  });
+
+  app.post('/api/activate-session', requireLogin, async (req, res) => {
+    const { sessionId } = req.body;
+    console.log(sessionId);
+    const session = await Session.findOne({ _id: sessionId });
+    session.paid = true;
+    await session.save();
+    res.send(session);
   });
 };

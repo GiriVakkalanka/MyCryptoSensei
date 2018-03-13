@@ -199,3 +199,8 @@ export const fetchSessions = () => async dispatch => {
   const res = await axios.get('/api/get-sessions');
   dispatch({ type: FETCH_SESSIONS, payload: res.data });
 };
+
+export const activateSession = sessionId => async dispatch => {
+  const res = await axios.post('/api/activate-session', sessionId);
+  dispatch({ type: GET_SESSION_PAGE, payload: res.data });
+};

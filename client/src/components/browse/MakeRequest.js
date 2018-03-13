@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon, Form } from 'semantic-ui-react';
+import { Grid, Header, Form } from 'semantic-ui-react';
 import moment from 'moment';
 class MakeRequest extends Component {
   state = { service: '', note: '', checked: false };

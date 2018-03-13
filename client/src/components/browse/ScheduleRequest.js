@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
-import WindowList from '../dashboard/WindowList';
-import WindowSelector from '../dashboard/WindowSelector';
+import { Grid } from 'semantic-ui-react';
+
 import ProfileSectionHeader from './ProfileSectionHeader';
 import RequestWindowList from './RequestWindowList';
 import RequestTimeSelector from './RequestTimeSelector';

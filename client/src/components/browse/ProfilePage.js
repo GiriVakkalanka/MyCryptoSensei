@@ -2,19 +2,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import {
-  Card,
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Divider
-} from 'semantic-ui-react';
+import { Grid, Header, Icon, Image, Divider } from 'semantic-ui-react';
 import ScheduleRequest from './ScheduleRequest';
-import ProfileSectionHeader from './ProfileSectionHeader';
+//import ProfileSectionHeader from './ProfileSectionHeader';
 import ServicesOffered from './ServicesOffered';
-import MakeRequest from './MakeRequest';
+//import MakeRequest from './MakeRequest';
 const styles = {
   chip: {
     margin: 4

@@ -6,7 +6,7 @@ import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
 import { Button, Segment } from 'semantic-ui-react';
 
-import moment from 'moment';
+//import moment from 'moment';
 
 class WindowSelector extends Component {
   componentDidMount() {

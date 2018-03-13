@@ -28,6 +28,8 @@ import InfoWrapper from './dashboard/InfoWrapper';
 import SetRateWrapper from './dashboard/SetRateWrapper';
 import BrowseWrapper from './browse/BrowseWrapper';
 import ProfilePageWrapper from './browse/ProfilePageWrapper';
+import RequestsWrapper from './dashboard/RequestsWrapper';
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -43,6 +45,11 @@ class App extends Component {
             <Route exact path="/redirect" component={Redirect} />
             <Route exact path="/thanks" component={Thanks} />
             <Route exact path="/Admin" component={AdminWrapper} />
+            <Route
+              exact
+              path="/dashboard/sensei/requests"
+              component={RequestsWrapper}
+            />
             <Route
               exact
               path="/dashboard/sensei/schedule"

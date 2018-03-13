@@ -5,6 +5,10 @@ const UserSchema = require('./Users');
 const requestSchema = new Schema({
   _sensei: { type: Schema.Types.ObjectId, ref: 'users' },
   _client: { type: Schema.Types.ObjectId, ref: 'users' },
+  senseiName: String,
+  senseiPic: String,
+  clientPic: String,
+  clientName: String,
   service: String,
   note: String,
   dateRequested: Date,

@@ -21,7 +21,8 @@ import {
   SELECT_WINDOW,
   FETCH_REQUESTS,
   ACCEPT_REQUEST,
-  DENY_REQUEST
+  DENY_REQUEST,
+  GET_SESSION_PAGE
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -185,4 +186,10 @@ export const acceptRequest = requestId => async dispatch => {
 export const denyRequest = requestId => async dispatch => {
   const res = await axios.post('/api/deny-request', requestId);
   dispatch({ type: DENY_REQUEST, payload: res.data });
+};
+
+export const getSessionPage = requestId => async dispatch => {
+  //console.log(sessionId);
+  const res = await axios.get('/api/get-session-page', { params: requestId });
+  dispatch({ type: GET_SESSION_PAGE, payload: res.data });
 };

@@ -64,7 +64,7 @@ module.exports = app => {
     });
 
     await session.save();
-    console.log(session);
+    //console.log(session);
 
     const receivedRequests = await Request.find({ _sensei: req.user.id });
     const sentRequests = await Request.find({ _client: req.user.id });
@@ -88,5 +88,15 @@ module.exports = app => {
       sentRequests
     };
     res.send(requests);
+  });
+
+  app.get('/api/get-session-page', requireLogin, async (req, res) => {
+    //console.log('reached');
+    const { requestId } = req.query;
+    //console.log(sessionId);
+    //console.log(req.query);
+    const sessionRecord = await Session.findOne({ _request: requestId });
+    console.log(sessionRecord);
+    res.send(sessionRecord);
   });
 };

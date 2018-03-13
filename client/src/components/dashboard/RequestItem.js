@@ -4,6 +4,7 @@ import { Button, Item, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 class RequestItem extends Component {
   componentDidMount() {
@@ -14,10 +15,14 @@ class RequestItem extends Component {
     return (
       <Button.Group>
         <Button
-          onClick={() =>
+          as={Link}
+          to={`/session/${this.props.id}`}
+          onClick={() => {
             this.props.acceptRequest({
               requestId: this.props.id
-            })}
+            });
+            this.props.getSessionPage({ requestId: this.props.id });
+          }}
         >
           Accept
         </Button>

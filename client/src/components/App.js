@@ -29,6 +29,7 @@ import SetRateWrapper from './dashboard/SetRateWrapper';
 import BrowseWrapper from './browse/BrowseWrapper';
 import ProfilePageWrapper from './browse/ProfilePageWrapper';
 import RequestsWrapper from './dashboard/RequestsWrapper';
+import SessionWrapper from './session/SessionWrapper';
 
 class App extends Component {
   componentDidMount() {
@@ -82,6 +83,7 @@ class App extends Component {
             />
             <Route exact path="/browse" component={BrowseWrapper} />
             <Route path="/sensei/:senseiId" component={ProfilePageWrapper} />
+            <Route path="/session/:sessionId" component={SessionWrapper} />
           </div>
         </BrowserRouter>
       </div>

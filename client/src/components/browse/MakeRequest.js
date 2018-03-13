@@ -5,7 +5,7 @@ import * as actions from '../../actions';
 import { Grid, Header, Form } from 'semantic-ui-react';
 import moment from 'moment';
 class MakeRequest extends Component {
-  state = { service: '', note: '', checked: false };
+  state = { service: '', note: '', isChecked: false };
   renderServiceOptions() {
     return _.map(this.props.senseiPage.services, service => {
       return { key: service, text: service, value: service };
@@ -17,9 +17,9 @@ class MakeRequest extends Component {
   handleNote(e, { value }) {
     this.setState({ note: { value } });
   }
-  handleCheck(e, { value }) {
-    console.log(value);
-    this.setState({ checked: !value });
+  handleCheck(e, { checked }) {
+    console.log(checked);
+    this.setState({ isChecked: !checked });
   }
   handleSubmit() {
     const request = {
@@ -60,8 +60,9 @@ class MakeRequest extends Component {
                   onChange={(e, { value }) => this.handleNote(e, { value })}
                 />
                 <Form.Checkbox
-                  value={this.state.checked}
-                  onChange={(e, { value }) => this.handleCheck(e, { value })}
+                  checked={this.state.checked}
+                  onChange={(e, { checked }) =>
+                    this.handleCheck(e, { checked })}
                   label="I agree to the Terms and Conditions"
                 />
                 <Form.Button onClick={() => this.handleSubmit()}>

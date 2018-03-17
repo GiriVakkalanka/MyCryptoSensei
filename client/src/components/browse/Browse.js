@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Grid, Header, Divider, Button, Image } from 'semantic-ui-react';
+import { Grid, Header, Divider, Button, Image, Input} from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import HitComponent from './HitComponent';
 //import ServiceGallery from './ServiceGallery';
@@ -26,6 +26,8 @@ const Hit = ({ hit }) => (
   />
 );
 
+const test = 'test';
+
 const Content = () => (
   <div className="content">
     <Hits hitComponent={Hit} />
@@ -37,23 +39,25 @@ class Browse extends Component {
     const renderButton = <Button />;
     return (
       <div>
-        <Image style={{ paddingLeft: '40' }} size="big" src={Logo} />
-        <Header style={{ paddingLeft: '60' }} size="huge">
+        <Image centered size="big" src={Logo} />
+        <Header textAlign="center" size="huge">
           Connect with safe and reliable experts for all of your crypto needs.
         </Header>
-
         <InstantSearch
           apiKey="53d73d0deaf00b036b6bc83b99f998b1"
           appId="ND8QXFOQUH"
           indexName="KoinVetDev"
         >
-          <Grid stackable container>
+          <Grid centered stackable container>
             <Grid.Row>
               <SearchBox
-                translations={{ placeholder: 'Search for Senseis' }}
+                translations={{ placeholder: 'Search anything' }}
                 reset={renderButton}
               />
             </Grid.Row>
+          </Grid>
+          <Divider/>
+          <Grid stackable container style={{paddingLeft:40, paddingTop:40}}>
             <Grid.Row>
               <Content />
             </Grid.Row>

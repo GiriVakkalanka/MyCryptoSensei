@@ -1,0 +1,170 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*
+  can also do grid-template-columns: repeat(3, 1fr(or 100px or w/e));
+  can also have grid-template-rows
+  can also do fr and px in combo with eachother where px is fixed and fr fills rest.
+  */
+  grid-gap: 5px 5px;
+  /*
+  grid-template-areas corresponds with grid:area for each child
+  */
+  grid-template-areas:
+  "header header header"
+  "content content content"
+  "sideContent sideContent sideContent"
+  "filler filler filler"
+  "footer footer footer"
+}
+
+
+@media screen and (min-width: 760px){
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /*
+    can also do grid-template-columns: repeat(3, 1fr(or 100px or w/e));
+    can also have grid-template-rows
+    can also do fr and px in combo with eachother where px is fixed and fr fills rest.
+    */
+    /*
+    grid-gap: 5px 5px;
+    */
+    /*
+    grid-template-areas corresponds with grid:area for each child
+    */
+    grid-template-areas:
+    "header header header"
+    "content content content"
+    "filler filler filler"
+    "footer footer footer"
+  }
+}
+
+
+
+
+
+/*
+//means all divs inside container div. Overrides children.//not using as part of column method
+.container div{
+  margin: 10px;
+  padding: 30px;
+  border: 5px dotted pink;
+}
+*/
+
+
+
+.header {
+  /*
+  grid-column: 1/4;
+  */
+  height: 64px;
+  background: #212121;
+  grid-area: header;
+  padding: 10px;
+  border-bottom: 1px solid #FBC531;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+}
+
+.footer {
+  /*
+  grid-column: 1/4;
+  */
+  grid-area: footer;
+  padding: 10px;
+  border-top: 2px solid blue;
+}
+
+.content{
+  grid-area: content;
+
+
+
+  /*
+  padding: 100px;
+  */
+  /*
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+  */
+  /*
+  background-image: url('../../images/Cuts.png');
+  */
+  /*
+  grid-column: 1/3;
+  */
+
+  background: url('../../images/Cuts.png') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  /*
+  border-top: 1px solid #FBC531;
+  */
+  max-width: 100%;
+  height: 450px
+}
+
+
+.content p {
+  padding-top: 175px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-family: HelveticaNeue-Thin;
+  font-size: 24px;
+  color: #FFFF00;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+@media screen and (min-width: 950px){
+  .content p {
+    padding-top: 175px;
+    padding-left: 300px;
+    padding-right: 300px;
+    font-family: HelveticaNeue-Thin;
+    font-size: 42px;
+    color: #FFFF00;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+}
+
+
+
+/*
+.content img {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+}
+*/
+
+.sideContent{
+  margin-top: 80px;
+  padding: 30px;
+  grid-area: sideContent;
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+  /*
+  grid-column: 3/4;
+  */
+  border: 5px dotted pink;
+}
+
+
+
+.filler{
+  margin: 10px;
+  padding: 30px;
+  grid-area: filler;
+  border: 5px dotted pink;
+}

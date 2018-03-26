@@ -31,6 +31,11 @@ import ProfilePageWrapper from './browse/ProfilePageWrapper';
 import RequestsWrapper from './dashboard/RequestsWrapper';
 import SessionWrapper from './session/SessionWrapper';
 import SessionsWrapper from './dashboard/SessionsWrapper';
+import Landing from './landing/Landing';
+import './style.css';
+
+//NavHeader component goes before all of the routes.
+// root route was BrowseWrapper
 
 class App extends Component {
   componentDidMount() {
@@ -40,9 +45,8 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div>
-            <NavHeader />
-            <Route exact path="/" component={BrowseWrapper} />
+          <div className="wrapper">
+            <Route exact path="/" component={Landing} />
             <Route exact path="/apply" component={ApplyWrapper} />
             <Route exact path="/redirect" component={Redirect} />
             <Route exact path="/thanks" component={Thanks} />

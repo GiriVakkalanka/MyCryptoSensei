@@ -1,0 +1,14 @@
+#header {
+  border-bottom: solid 1px #ffff00;
+  background-color: #212121;
+  position:fixed;
+  width: 100%;
+  top: 0;
+  padding: 10px;
+  text-align: center;
+
+}
+
+#logo {
+  color: #ffff00
+}

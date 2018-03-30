@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className="wrapper">
+          <div>
             <Route exact path="/" component={Landing} />
             <Route exact path="/apply" component={ApplyWrapper} />
             <Route exact path="/redirect" component={Redirect} />

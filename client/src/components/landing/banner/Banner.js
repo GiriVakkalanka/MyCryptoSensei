@@ -7,9 +7,15 @@ import './Banner.css';
 class Banner extends Component {
   render() {
     return (
-      <div id="banner">
-        <div id="tagline">
-          <p>Connect with safe and reliable experts for all of your crypto needs.</p>
+      <div className="bannerContainer">
+        <div id="banner">
+          <div className="animated bounceInLeft" id="skyline"></div>
+          <div id="tagline">
+            <p className="animated bounceInLeft">Connect with safe and reliable experts for all of your crypto needs.</p>
+            <div className="animated bounceInLeft" id="getStartedButton">
+            Get Started
+            </div>
+          </div>
         </div>
       </div>
     );

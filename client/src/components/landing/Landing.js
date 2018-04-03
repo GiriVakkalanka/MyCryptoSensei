@@ -6,6 +6,7 @@ import './Landing.css';
 import Header from './header/Header';
 import Service from './service/Service';
 import Banner from './banner/Banner';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class Landing extends Component {
   render() {
@@ -17,17 +18,31 @@ class Landing extends Component {
         <div className="banner">
           <Banner/>
         </div>
+        <div className="salesLine">
+          <p id="salesText">Talk to a Sensei about...</p>
+        </div>
         <div className="container">
           <div className="serviceOne">
-            <Service icon="onboarding"/>
+            <Service
+              icon="wallet"
+              service="Wallet Setup"
+              description="Learn how to purchase bitcoin and other altcoins and store them safely in a cold-storage wallet."
+            />
           </div>
           <div className="serviceTwo">
-            <Service icon="whitepaper"/>
+            <Service
+              icon="whitepaper"
+              service="Whitepaper Analysis"
+              description="Talk to the experts about the technical foundations and business opportunities of any token."
+            />
           </div>
           <div className="serviceThree">
-            <Service icon="onboarding"/>
+            <Service
+              icon="tax"
+              service="Tax Consultation"
+              description="The IRS is ready. Are you? Consult with a CPA to understand the tax rules of crypto investing."
+            />
           </div>
-
         </div>
       </div>
     );

@@ -8,9 +8,9 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <div id="header">
+      <nav id="header">
         <h1 id="logo">MyCryptoSensei</h1>
-      </div>
+      </nav>
     );
   }
 }

@@ -1,12 +1,28 @@
 .container {
   display: grid;
   padding: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 10px 10px;
   grid-template-areas:
-  "header header header"
-  "banner banner banner"
-  "serviceOne serviceTwo serviceThree"
+
+  "banner"
+  "salesLine"
+  "serviceOne"
+  "serviceTwo"
+  "serviceThree"
+}
+
+@media screen and (min-width: 1200px){
+  .container {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px 10px;
+    grid-template-areas:
+    "banner banner banner"
+    "salesLine salesLine salesLine "
+    "serviceOne serviceTwo serviceThree"
+  }
 }
 
 .header {
@@ -15,6 +31,7 @@
 
 .banner {
   grid-area:banner;
+
 
 }
 
@@ -30,4 +47,18 @@
 .serviceThree {
   grid-area: serviceThree;
 
+}
+
+.salesLine {
+  grid-area: salesLine;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 48px;
+}
+
+#salesText {
+  display: inline-block;
+  border-bottom: dashed 5px #212121;
 }

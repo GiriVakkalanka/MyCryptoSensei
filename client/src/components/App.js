@@ -33,6 +33,7 @@ import SessionWrapper from './session/SessionWrapper';
 import SessionsWrapper from './dashboard/SessionsWrapper';
 import Landing from './landing/Landing';
 import './style.css';
+import Header from './landing/header/Header';
 
 //NavHeader component goes before all of the routes.
 // root route was BrowseWrapper
@@ -46,6 +47,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
+            <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/apply" component={ApplyWrapper} />
             <Route exact path="/redirect" component={Redirect} />

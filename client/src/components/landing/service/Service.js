@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
-import './Service.css';
+//import './Service.css';
 import wallet from '../../../images/Wallet.png';
 import whitepaper from '../../../images/WhitepaperAnalysis.png';
 import business from '../../../images/Business.png';

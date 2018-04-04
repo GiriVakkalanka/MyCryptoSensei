@@ -4,7 +4,7 @@
   border: 5px solid #212121;
   border-radius: 5px;
 }
-
+/*
 #service:hover {
   grid-template-columns: 1fr;
   text-align: center;
@@ -12,6 +12,7 @@
   border-radius: 5px;
   transform: scale(1.02);
 }
+*/
 
 #icon {
   margin-top: 5%;
@@ -48,13 +49,13 @@
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
 }
-
+/*
 #getStartedServiceButton: hover {
   border: solid 5px red;
   border-radius: 5px;
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
-  /*
+
   transform: scale(1.02);
   */
 }

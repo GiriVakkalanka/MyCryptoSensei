@@ -5,7 +5,7 @@
   border-radius: 5px;
 }
 
-#service:hover{
+#service:hover {
   grid-template-columns: 1fr;
   text-align: center;
   border: 5px solid #212121;
@@ -19,7 +19,7 @@
   width: 33%;
 }
 
-#serviceNameContainer{
+#serviceNameContainer {
   padding: 10px;
 }
 
@@ -29,7 +29,6 @@
   border-bottom: dashed 5px #212121;
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
-
 }
 
 #description {
@@ -48,7 +47,6 @@
   border-radius: 5px;
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
-
 }
 
 #getStartedServiceButton: hover {
@@ -56,5 +54,7 @@
   border-radius: 5px;
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
+  /*
   transform: scale(1.02);
+  */
 }

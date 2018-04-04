@@ -2,11 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import { Grid, Header, Divider, Button, Image, Input} from 'semantic-ui-react';
+import { Grid, Header, Divider, Button, Image, Input } from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import HitComponent from './HitComponent';
 //import ServiceGallery from './ServiceGallery';
 import Logo from '../../images/sensei_1a.png';
+import './Browse.css';
 
 const Hit = ({ hit }) => (
   // <div>
@@ -48,16 +49,14 @@ class Browse extends Component {
           appId="ND8QXFOQUH"
           indexName="KoinVetDev"
         >
-          <Grid centered stackable container>
-            <Grid.Row>
-              <SearchBox
-                translations={{ placeholder: 'Search anything' }}
-                reset={renderButton}
-              />
-            </Grid.Row>
-          </Grid>
-          <Divider/>
-          <Grid stackable container style={{paddingLeft:40, paddingTop:40}}>
+          <SearchBox
+            translations={{ placeholder: 'Search anything' }}
+            reset={renderButton}
+            style={{ background: 'red' }}
+          />
+
+          <Divider />
+          <Grid stackable container style={{ paddingLeft: 40, paddingTop: 40 }}>
             <Grid.Row>
               <Content />
             </Grid.Row>

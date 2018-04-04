@@ -13,30 +13,30 @@ class Landing extends Component {
     return (
       <div>
         <div className="header">
-          <Header/>
+          <Header />
         </div>
         <div className="banner">
-          <Banner/>
+          <Banner />
         </div>
         <div className="salesLine">
           <p id="salesText">Talk to a Sensei about...</p>
         </div>
         <div className="container">
-          <div className="serviceOne">
+          <div className="serviceOne fadeInLeft">
             <Service
               icon="wallet"
               service="Wallet Setup"
               description="Learn how to purchase bitcoin and other altcoins and store them safely in a cold-storage wallet."
             />
           </div>
-          <div className="serviceTwo">
+          <div className="serviceTwo fadeInUp">
             <Service
               icon="whitepaper"
               service="Whitepaper Analysis"
               description="Talk to the experts about the technical foundations and business opportunities of any token."
             />
           </div>
-          <div className="serviceThree">
+          <div className="serviceThree fadeInRight">
             <Service
               icon="tax"
               service="Tax Consultation"

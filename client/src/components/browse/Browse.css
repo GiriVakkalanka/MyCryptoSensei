@@ -1,0 +1,9 @@
+.ais-SearchBox {
+  width: 280px;
+  height: 33px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-size: 14px;
+  top: 80px;
+  left: 205px;
+}

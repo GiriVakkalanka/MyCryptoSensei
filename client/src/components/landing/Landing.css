@@ -3,50 +3,42 @@
   padding: 20px;
   grid-template-columns: 1fr;
   grid-gap: 10px 10px;
-  grid-template-areas:
-
-  "banner"
-  "salesLine"
-  "serviceOne"
-  "serviceTwo"
-  "serviceThree"
+  grid-template-areas: 'banner' 'salesLine' 'serviceOne' 'serviceTwo'
+    'serviceThree';
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .container {
     display: grid;
     padding: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px 10px;
-    grid-template-areas:
-    "banner banner banner"
-    "salesLine salesLine salesLine "
-    "serviceOne serviceTwo serviceThree"
+    grid-template-areas: 'banner banner banner' 'salesLine salesLine salesLine '
+      'serviceOne serviceTwo serviceThree';
   }
 }
 
 .header {
-  grid-area:header;
+  grid-area: header;
 }
 
 .banner {
-  grid-area:banner;
-
-
+  grid-area: banner;
 }
 
 .serviceOne {
   grid-area: serviceOne;
-
+  -webkit-animation-duration: 0.5s;
 }
 
 .serviceTwo {
   grid-area: serviceTwo;
+  -webkit-animation-duration: 0.5s;
 }
 
 .serviceThree {
   grid-area: serviceThree;
-
+  -webkit-animation-duration: 0.5s;
 }
 
 .salesLine {

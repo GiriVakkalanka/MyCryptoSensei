@@ -49,12 +49,13 @@ class Browse extends Component {
           appId="ND8QXFOQUH"
           indexName="KoinVetDev"
         >
-          <SearchBox
-            translations={{ placeholder: 'Search anything' }}
-            reset={renderButton}
-            style={{ background: 'red' }}
-          />
-
+          <div id="header">
+            <SearchBox
+              translations={{ placeholder: 'Search anything' }}
+              reset={renderButton}
+              style={{ background: 'red' }}
+            />
+          </div>
           <Divider />
           <Grid stackable container style={{ paddingLeft: 40, paddingTop: 40 }}>
             <Grid.Row>

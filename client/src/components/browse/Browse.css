@@ -1,9 +1,49 @@
-.ais-SearchBox {
-  width: 280px;
-  height: 33px;
-  white-space: nowrap;
-  box-sizing: border-box;
-  font-size: 14px;
-  top: 80px;
-  left: 205px;
+#header .ais-SearchBox__root {
+  max-width: none;
+}
+
+#header .ais-SearchBox__wrapper input {
+  font-size: 28px;
+  font-weight: 100;
+  width: 96%;
+  margin-left: 4%;
+  padding: 5px;
+  background: #ffea00;
+  border: 5px solid #212121;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+#header .ais-SearchBox__wrapper input::-webkit-input-placeholder {
+  color: #212121;
+}
+
+#header .ais-SearchBox__input:valid ~ .ais-SearchBox__reset {
+  margin-right: 25px;
+}
+
+#header .ais-SearchBox__submit {
+  top: inherit;
+  right: 0px;
+  left: inherit;
+}
+
+#header .ais-SearchBox__submit svg {
+  fill: #212121;
+}
+
+#header .ais-SearchBox-input::-webkit-input-placeholder {
+  color: red;
+}
+
+#header .ais-SearchBox-input::-moz-placeholder {
+  color: red;
+}
+
+#header .ais-SearchBox-input:-ms-input-placeholder {
+  color: #9aaeb5;
+}
+
+#header .ais-SearchBox-input::placeholder {
+  color: #9aaeb5;
 }

@@ -19,8 +19,7 @@ class Banner extends Component {
             <div id="searchbox">
               <SearchBox
                 translations={{
-                  placeholder:
-                    'What are you looking for? ex. litecoin analysis, tax help, cold storage, etc. '
+                  placeholder: 'What are you looking for?'
                 }}
                 autoFocus
               />

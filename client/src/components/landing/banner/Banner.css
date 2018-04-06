@@ -79,15 +79,18 @@
 
 #searchbox .ais-SearchBox__wrapper input::-webkit-input-placeholder {
   color: #ffea00;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #searchbox .ais-SearchBox__wrapper input::-moz-placeholder {
   color: #ffea00;
+  font-size: 16px;
 }
 
 #searchbox .ais-SearchBox__wrapper input::-ms-input-placeholder {
   color: #ffea00;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #searchbox .ais-SearchBox__input:valid ~ .ais-SearchBox__reset {

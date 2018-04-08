@@ -14,7 +14,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px 10px;
     grid-template-areas: 'banner banner banner' 'salesLine salesLine salesLine '
-      'serviceOne serviceTwo serviceThree';
+      'hits hits hits' 'serviceOne serviceTwo serviceThree';
   }
 }
 
@@ -24,6 +24,10 @@
 
 .banner {
   grid-area: banner;
+}
+
+.content {
+  grid-area: hits;
 }
 
 .serviceOne {

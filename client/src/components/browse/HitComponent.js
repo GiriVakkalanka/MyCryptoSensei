@@ -93,49 +93,47 @@ class HitComponent extends Component {
   }
   render() {
     return (
-      <Grid>
-        <Segment>
-          <Grid.Row>
-            <Grid.Column>
-              <Image floated="left" src={this.props.pic} rounded />
-            </Grid.Column>
-            <Grid.Column>
-              <Header>{this.props.name}</Header>
-              <Header.Subheader>
-                {this.props.city}, {this.props.country}
-              </Header.Subheader>
-            </Grid.Column>
+      <Segment>
+        <Grid.Row>
+          <Grid.Column>
+            <Image floated="left" src={this.props.pic} rounded />
+          </Grid.Column>
+          <Grid.Column>
+            <Header>{this.props.name}</Header>
+            <Header.Subheader>
+              {this.props.city}, {this.props.country}
+            </Header.Subheader>
+          </Grid.Column>
 
-            <Statistic floated="right">
-              <Statistic.Value>
-                $
-                {this.props.rate}
-              </Statistic.Value>
-              <Statistic.Label>USD/Hour</Statistic.Label>
-            </Statistic>
-          </Grid.Row>
+          <Statistic floated="right">
+            <Statistic.Value>
+              $
+              {this.props.rate}
+            </Statistic.Value>
+            <Statistic.Label>USD/Hour</Statistic.Label>
+          </Statistic>
+        </Grid.Row>
 
-          <Header as="h4">{this.props.desc}</Header>
-          <Grid.Row>
-            <Grid.Column>
-              <h5>Services offered</h5>
-            </Grid.Column>
-            <div style={styles.wrapper}>{this.renderServiceChips()}</div>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <h5>Specialization</h5>
-            </Grid.Column>
-            <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <h5>Links</h5>
-            </Grid.Column>
-            <div>{this.renderLinks()}</div>
-          </Grid.Row>
-        </Segment>
-      </Grid>
+        <Header as="h4">{this.props.desc}</Header>
+        <Grid.Row>
+          <Grid.Column>
+            <h5>Services offered</h5>
+          </Grid.Column>
+          <div style={styles.wrapper}>{this.renderServiceChips()}</div>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <h5>Specialization</h5>
+          </Grid.Column>
+          <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <h5>Links</h5>
+          </Grid.Column>
+          <div>{this.renderLinks()}</div>
+        </Grid.Row>
+      </Segment>
     );
   }
 }

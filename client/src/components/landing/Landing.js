@@ -73,7 +73,9 @@ class Landing extends Component {
           <div className="banner">
             <Banner />
           </div>
-          <Content />
+          <div className="hits">
+            <Content style={{ textAlign: 'center' }} />
+          </div>
           <div className="salesLine">
             <p id="salesText">Talk to a Sensei about...</p>
           </div>

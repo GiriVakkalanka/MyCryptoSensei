@@ -8,7 +8,7 @@ import Service from './service/Service';
 import Banner from './banner/Banner';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
-import HitComponent from '../browse/HitComponent';
+import HitComponent from '../browse/hitComponent/HitComponent';
 import { createConnector } from 'react-instantsearch';
 
 const Hit = ({ hit }) => (

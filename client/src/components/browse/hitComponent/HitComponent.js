@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import {
   Segment,
   Grid,
@@ -13,6 +13,7 @@ import {
 } from 'semantic-ui-react';
 import Chip from 'material-ui/Chip';
 import { Link } from 'react-router-dom';
+import './HitComponent.css';
 
 const styles = {
   chip: {
@@ -93,7 +94,7 @@ class HitComponent extends Component {
   }
   render() {
     return (
-      <Segment>
+      <div id="hitContainer">
         <Grid.Row>
           <Grid.Column>
             <Image floated="left" src={this.props.pic} rounded />
@@ -133,7 +134,7 @@ class HitComponent extends Component {
           </Grid.Column>
           <div>{this.renderLinks()}</div>
         </Grid.Row>
-      </Segment>
+      </div>
     );
   }
 }

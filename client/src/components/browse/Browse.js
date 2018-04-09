@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import { Grid, Header, Divider, Button, Image, Input } from 'semantic-ui-react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
-import HitComponent from './HitComponent';
+import HitComponent from './hitComponent/HitComponent';
 //import ServiceGallery from './ServiceGallery';
 import Logo from '../../images/sensei_1a.png';
 import './Browse.css';

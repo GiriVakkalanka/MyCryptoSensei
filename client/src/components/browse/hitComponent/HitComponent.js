@@ -2,20 +2,19 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
-import {
-  Segment,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Statistic,
-  Button
-} from 'semantic-ui-react';
+import { Header, Icon, Statistic } from 'semantic-ui-react';
 import Chip from 'material-ui/Chip';
 import { Link } from 'react-router-dom';
+import LinkIcon from '../../../images/Link.png';
 import './HitComponent.css';
 
+import Button from '../../interface/button/Button';
+
 const styles = {
+  label: {
+    fontFamily: 'Rubik, sans-serif',
+    fontSize: '16px'
+  },
   chip: {
     margin: 4
   },
@@ -34,7 +33,14 @@ class HitComponent extends Component {
   renderServiceChips() {
     return _.map(this.props.expertise, expertise => {
       return (
-        <Chip style={styles.chip} key={expertise}>
+        <Chip
+          key={expertise}
+          style={styles.chip}
+          key={expertise}
+          backgroundColor="#212121"
+          labelColor="#ffea00"
+          labelStyle={styles.label}
+        >
           {expertise}
         </Chip>
       );
@@ -43,69 +49,55 @@ class HitComponent extends Component {
   renderSpecializationChips() {
     return _.map(this.props.specialization, specialization => {
       return (
-        <Chip style={styles.chip} key={specialization}>
+        <Chip
+          style={styles.chip}
+          key={specialization}
+          backgroundColor="#212121"
+          labelColor="#ffea00"
+          labelStyle={styles.label}
+        >
           {specialization}
         </Chip>
       );
     });
   }
   renderLinks() {
+    console.log(this.props.links);
     return (
       <div>
-        <a href={this.props.links ? this.props.links[0] : ''}>
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="big"
-            name="chain"
-          />
+        <a href={this.props.links['linkOne']}>
+          <img id="linkIcon" src={LinkIcon} />
         </a>
-        <a href={this.props.links ? this.props.links[1] : ''}>
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="big"
-            name="chain"
-          />
+        <a href={this.props.links['linkTwo']}>
+          <img id="linkIcon" src={LinkIcon} />
         </a>
-        <a href={this.props.links ? this.props.links[2] : ''}>
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="big"
-            name="chain"
-          />
+        <a href={this.props.links['linkThree']}>
+          <img id="linkIcon" src={LinkIcon} />
         </a>
-
-        <Button
-          as={Link}
-          to={`/sensei/${this.props.id}`}
-          color="yellow"
-          floated="right"
-          onClick={() => this.handleClick()}
-        >
-          <div style={{ color: 'black' }}>See availability</div>
-        </Button>
       </div>
     );
   }
   render() {
     return (
       <div id="hitContainer">
-        <Grid.Row>
-          <Grid.Column>
-            <Image floated="left" src={this.props.pic} rounded />
-          </Grid.Column>
-          <Grid.Column>
-            <Header>{this.props.name}</Header>
-            <Header.Subheader>
-              {this.props.city}, {this.props.country}
-            </Header.Subheader>
-          </Grid.Column>
+        <div id="pic">
+          <img id="picFile" src={this.props.pic} />
+        </div>
+        <div id="name">
+          <p id="nameText">{this.props.name}</p>
+          <p id="descriptionText">{this.props.desc}</p>
+        </div>
+        <div id="location">
+          {this.props.city}, {this.props.country}
+          <div id="links">
+            <div>
+              <h5>Links</h5>
+            </div>
+            <div>{this.renderLinks()}</div>
+          </div>
+        </div>
 
+        <div id="price">
           <Statistic floated="right">
             <Statistic.Value>
               $
@@ -113,27 +105,29 @@ class HitComponent extends Component {
             </Statistic.Value>
             <Statistic.Label>USD/Hour</Statistic.Label>
           </Statistic>
-        </Grid.Row>
+        </div>
 
-        <Header as="h4">{this.props.desc}</Header>
-        <Grid.Row>
-          <Grid.Column>
+        <div id="serviceChips">
+          <div>
             <h5>Services offered</h5>
-          </Grid.Column>
+          </div>
           <div style={styles.wrapper}>{this.renderServiceChips()}</div>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
+        </div>
+        <div id="specializationChips">
+          <div>
             <h5>Specialization</h5>
-          </Grid.Column>
+          </div>
           <div style={styles.wrapper}>{this.renderSpecializationChips()}</div>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            <h5>Links</h5>
-          </Grid.Column>
-          <div>{this.renderLinks()}</div>
-        </Grid.Row>
+        </div>
+
+        <div id="seeAvailabilityButton">
+          <Button
+            type="link"
+            to={`/sensei/${this.props.id}`}
+            onClick={() => this.handleClick()}
+            label="See Availability"
+          />
+        </div>
       </div>
     );
   }

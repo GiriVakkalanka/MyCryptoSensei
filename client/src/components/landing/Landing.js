@@ -16,6 +16,7 @@ const Hit = ({ hit }) => (
   //   <h1>{hit.email}</h1>
   // </div>
   <HitComponent
+    key={hit._id}
     name={hit.fullName}
     pic={hit.pic}
     rate={hit.rate}
@@ -42,6 +43,7 @@ const Content = createConnector({
     hits && query
       ? hits.map(hit => (
           <HitComponent
+            key={hit._id}
             name={hit.fullName}
             pic={hit.pic}
             rate={hit.rate}

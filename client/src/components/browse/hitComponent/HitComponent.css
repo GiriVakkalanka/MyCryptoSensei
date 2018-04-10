@@ -1,6 +1,90 @@
 #hitContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
   border: solid 5px #212121;
   border-radius: 5px;
-  margin: 40px;
-  padding: 20px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+  /*
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  align-items: center;
+  */
+}
+
+#pic {
+  grid-column: 1/2;
+}
+
+#picFile {
+  border: solid 5px #212121;
+  border-radius: 5px;
+  length: 150px;
+  width: 150px;
+}
+
+#name {
+  grid-column: 2/4;
+  font-family: 'Rubik', sans-serif;
+}
+
+#nameText {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+#descriptionText {
+  font-size: 18px;
+  align-self: start;
+}
+
+#price {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+#location {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#serviceChips {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#specializationChips {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/*
+
+#links {
+  grid-column: 1;
+  grid-row: 3;
+}
+*/
+#seeAvailabilityButton {
+  grid-column: 3;
+  justify-self: end;
+  grid-row: 4;
+}
+
+#linkIcon {
+  width: 30px;
+  length: 30px;
+}
+
+#linkIcon:hover {
+  width: 32px;
+  length: 32px;
 }

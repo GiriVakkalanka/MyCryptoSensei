@@ -13,11 +13,16 @@
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: 'Rubik', sans-serif;
+  -webkit-animation-duration: 1s;
   /*
   grid-auto-rows: minmax(100px, auto);
   justify-items: center;
   align-items: center;
   */
+}
+
+#hitContainer:hover {
+  transform: scale(1.05);
 }
 
 #pic {

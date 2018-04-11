@@ -24,10 +24,20 @@ class Button extends Component {
       </button>
     );
   }
+
+  renderLoginButton() {
+    return (
+      <a href="/auth/google">
+        <button id="buttonContainer">{this.props.label}</button>
+      </a>
+    );
+  }
   renderButton() {
     switch (this.props.type) {
       case 'link':
         return this.renderLinkButton();
+      case 'login':
+        return this.renderLoginButton();
       default:
         return this.renderNormalButton();
     }

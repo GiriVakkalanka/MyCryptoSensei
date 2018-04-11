@@ -1,15 +1,25 @@
 #header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   border-bottom: solid 5px #212121;
-  background-color: #FFEA00;
+  background-color: #ffea00;
   position: fixed;
   width: 100%;
   top: 0;
   padding: 10px;
   text-align: center;
   z-index: 1;
+}
 
+#headerLoginButton {
+  grid-column: 3;
+  justify-self: end;
 }
 
 #logo {
-  color: #212121
+  grid-column: 2;
+  cursor: pointer;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 32px;
+  color: #212121;
 }

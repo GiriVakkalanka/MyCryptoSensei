@@ -3,13 +3,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 import './Header.css';
-
+import Button from '../../interface/button/Button';
 
 class Header extends Component {
   render() {
     return (
-      <nav id="header">
-        <h1 id="logo">MyCryptoSensei</h1>
+      <nav>
+        <div id="header">
+          <div id="logo">
+            <p>MyCryptoSensei</p>
+          </div>
+          <div id="headerLoginButton">
+            <Button type="login" label="Log in" />
+          </div>
+        </div>
       </nav>
     );
   }

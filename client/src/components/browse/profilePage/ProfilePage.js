@@ -23,7 +23,7 @@ const styles = {
 
 class ProfilePage extends Component {
   componentDidMount() {
-    console.log(this.props.senseiPage);
+    console.log(this.props);
   }
 
   render() {

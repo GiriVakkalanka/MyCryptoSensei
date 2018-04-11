@@ -199,9 +199,9 @@ module.exports = app => {
   app.get('/api/get_sensei_page', requireLogin, async (req, res) => {
     //console.log('reached');
     const { key } = req.query;
-    //console.log(req.query);
+    //console.log(key);
     const senseiRecord = await User.findOne({ _id: key });
-    //console.log(senseiRecord);
+    console.log(senseiRecord);
     res.send(senseiRecord);
   });
 };

@@ -12,5 +12,6 @@ module.exports = {
   algoliaClientID: process.env.ALGOLIA_CLIENT_ID,
   algoliaClientSecret: process.env.ALGOLIA_CLIENT_SECRET,
   sendGridKey: process.env.SEND_GRID_KEY,
-  redirectDomain: process.env.REDIRECT_DOMAIN
+  redirectDomain: process.env.REDIRECT_DOMAIN,
+  algoliaIndex: process.env.ALGOLIA_INDEX
 };

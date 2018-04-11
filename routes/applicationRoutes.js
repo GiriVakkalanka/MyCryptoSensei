@@ -5,7 +5,7 @@ const requireLogin = require('../middlewares/requireLogin');
 const keys = require('../config/keys');
 const algoliasearch = require('algoliasearch');
 const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
-const index = client.initIndex('KoinVetDev');
+const index = client.initIndex(keys.algoliaIndex);
 
 module.exports = app => {
   app.get('/api/get-new-applications', async (req, res) => {

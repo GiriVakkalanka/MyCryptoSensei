@@ -6,7 +6,7 @@ const User = mongoose.model('users');
 const keys = require('../config/keys');
 const algoliasearch = require('algoliasearch');
 const client = algoliasearch(keys.algoliaClientID, keys.algoliaClientSecret);
-const index = client.initIndex('KoinVetDev');
+const index = client.initIndex(keys.algoliaIndex);
 
 module.exports = app => {
   app.get(

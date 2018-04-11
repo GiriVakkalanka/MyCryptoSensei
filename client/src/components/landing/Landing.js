@@ -67,7 +67,7 @@ class Landing extends Component {
         <InstantSearch
           apiKey="53d73d0deaf00b036b6bc83b99f998b1"
           appId="ND8QXFOQUH"
-          indexName="KoinVetDev"
+          indexName={process.env.REACT_APP_ALGOLIA_INDEX}
         >
           <div className="header">
             <Header />

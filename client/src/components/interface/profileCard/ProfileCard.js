@@ -61,16 +61,16 @@ class ProfileCard extends Component {
     });
   }
   renderLinks() {
-    console.log(this.props.links);
+    console.log(this.props.links ? this.props.links : 'wtf');
     return (
       <div>
-        <a href={this.props.links['linkOne']}>
+        <a href={this.props.links ? this.props.links['linkOne'] : ''}>
           <img id="linkIcon" src={LinkIcon} />
         </a>
-        <a href={this.props.links['linkTwo']}>
+        <a href={this.props.links ? this.props.links['linkTwo'] : ''}>
           <img id="linkIcon" src={LinkIcon} />
         </a>
-        <a href={this.props.links['linkThree']}>
+        <a href={this.props.links ? this.props.links['linkThree'] : ''}>
           <img id="linkIcon" src={LinkIcon} />
         </a>
       </div>

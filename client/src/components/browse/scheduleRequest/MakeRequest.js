@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 import { Grid, Header, Form } from 'semantic-ui-react';
 import moment from 'moment';
 class MakeRequest extends Component {

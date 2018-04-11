@@ -1,0 +1,22 @@
+#scheduleRequest {
+  display: grid;
+  grid-template-columns: 66% 33%;
+  border: solid 5px #212121;
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+#scheduleRequestWindowList {
+  grid-column: 1;
+  border: solid 5px #212121;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#scheduleRequestTimeSelector {
+  grid-column: 2;
+  border: solid 5px #212121;
+  border-radius: 5px;
+}

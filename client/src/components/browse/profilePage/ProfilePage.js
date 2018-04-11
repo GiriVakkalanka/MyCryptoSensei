@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 import { Grid, Icon, Image, Divider } from 'semantic-ui-react';
-import ScheduleRequest from '../ScheduleRequest';
+import ScheduleRequest from '../scheduleRequest/ScheduleRequest';
 //import ProfileSectionHeader from './ProfileSectionHeader';
 import ServicesOffered from '../ServicesOffered';
 import './ProfilePage.css';
@@ -25,57 +25,6 @@ class ProfilePage extends Component {
   componentDidMount() {
     console.log(this.props.senseiPage);
   }
-  renderLinks() {
-    return (
-      <div>
-        <a
-          href={
-            this.props.senseiPage.links
-              ? this.props.senseiPage.links['linkOne']
-              : ''
-          }
-        >
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="large"
-            name="chain"
-          />
-        </a>
-        <a
-          href={
-            this.props.senseiPage.links
-              ? this.props.senseiPage.links['linkTwo']
-              : ''
-          }
-        >
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="large"
-            name="chain"
-          />
-        </a>
-        <a
-          href={
-            this.props.senseiPage.links
-              ? this.props.senseiPage.links['linkThree']
-              : ''
-          }
-        >
-          <Icon
-            color="yellow"
-            fitted
-            style={{ marginTop: 5 }}
-            size="large"
-            name="chain"
-          />
-        </a>
-      </div>
-    );
-  }
 
   render() {
     return (
@@ -95,6 +44,9 @@ class ProfilePage extends Component {
             specialization={this.props.senseiPage.specialization}
             rate={this.props.senseiPage.rate}
           />
+        </div>
+        <div id="profilePageScheduleRequest">
+          <ScheduleRequest />
         </div>
       </div>
     );

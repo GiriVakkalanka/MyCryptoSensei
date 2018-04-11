@@ -29,7 +29,7 @@ class PageHeader extends Component {
   renderInstructions() {
     switch (this.props.page) {
       case 'Sensei':
-        return "To make a schedule request, choose the best hour from the Sensei's windows of availability.";
+        return "Choose an hour from the Sensei's windows of availability to make a schedule request.";
       default:
         return ' ';
     }

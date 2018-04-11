@@ -9,6 +9,7 @@ import ServicesOffered from '../ServicesOffered';
 import './ProfilePage.css';
 import PageHeader from '../../interface/pageHeader/PageHeader';
 import Header from '../../interface/header/Header';
+import ProfileCard from '../../interface/profileCard/ProfileCard';
 //import MakeRequest from './MakeRequest';
 const styles = {
   chip: {
@@ -81,6 +82,19 @@ class ProfilePage extends Component {
       <div id="profilePageContainer">
         <div id="profilePageHeader">
           <PageHeader page="Sensei" />
+        </div>
+        <div id="profilePageProfileCard">
+          <ProfileCard
+            fullName={this.props.senseiPage.fullName}
+            city={this.props.senseiPage.city}
+            country={this.props.senseiPage.country}
+            description={this.props.senseiPage.description}
+            pic={this.props.senseiPage.pic}
+            links={this.props.senseiPage.links}
+            services={this.props.senseiPage.services}
+            specialization={this.props.senseiPage.specialization}
+            rate={this.props.senseiPage.rate}
+          />
         </div>
       </div>
     );

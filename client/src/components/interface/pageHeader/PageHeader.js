@@ -13,7 +13,7 @@ import tax from '../../../images/Tax.png';
 class PageHeader extends Component {
   renderIcon() {
     switch (this.props.page) {
-      case 'sensei':
+      case 'Sensei':
         return wallet;
       case 'whitepaper':
         return whitepaper;
@@ -25,14 +25,29 @@ class PageHeader extends Component {
         return wallet;
     }
   }
+
+  renderInstructions() {
+    switch (this.props.page) {
+      case 'Sensei':
+        return "To make a schedule request, choose the best hour from the Sensei's windows of availability.";
+      default:
+        return ' ';
+    }
+  }
+
   render() {
     return (
-      <div id="pageHeaderContainer">
-        <div id="pageHeaderIconDiv">
-          <img id="pageHeaderIcon" src={this.renderIcon()} />
+      <div>
+        <div id="pageHeaderSubContainer">
+          <div className="fadeInLeftBig" id="pageHeaderIconDiv">
+            <img id="pageHeaderIcon" src={this.renderIcon()} />
+          </div>
+          <div className="fadeInLeftBig" id="pageHeaderTitleDiv">
+            <p id="pageHeaderTitle">{this.props.page}</p>
+          </div>
         </div>
-        <div id="pageHeaderTitleDiv">
-          <p id="pageHeaderTitle">{this.props.page}</p>
+        <div className="fadeInLeftBig" id="pageHeaderInstructions">
+          <p>{this.renderInstructions()}</p>
         </div>
       </div>
     );

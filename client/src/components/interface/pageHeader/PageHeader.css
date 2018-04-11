@@ -1,4 +1,4 @@
-#pageHeaderContainer {
+#pageHeaderSubContainer {
   display: grid;
   grid-template-columns: 90% 10%;
   border-bottom: solid 5px #212121;
@@ -14,14 +14,25 @@
 #pageHeaderIconDiv {
   grid-column: 2;
   grid-row: 1;
+  -webkit-animation-duration: 0.5s;
 }
+
 #pageHeaderTitleDiv {
   grid-column: 1;
   grid-row: 1;
   padding-right: 30px;
+  -webkit-animation-duration: 0.5s;
 }
 
 #pageHeaderIcon {
   width: 100px;
   height: 100px;
+}
+
+#pageHeaderInstructions {
+  font-family: 'Rubik', sans-serif;
+  font-size: 26px;
+  color: #212121;
+  text-align: right;
+  -webkit-animation-duration: 0.5s;
 }

@@ -1,0 +1,90 @@
+#profileCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border: solid 5px #212121;
+  border-radius: 5px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+  -webkit-animation-duration: 1s;
+  /*
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  align-items: center;
+  */
+}
+
+#profileCardpic {
+  grid-column: 1/2;
+}
+
+#profileCardpicFile {
+  border: solid 5px #212121;
+  border-radius: 5px;
+  length: 150px;
+  width: 150px;
+}
+
+#profileCardname {
+  grid-column: 2/4;
+  font-family: 'Rubik', sans-serif;
+}
+
+#profileCardNameText {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+#profileCardDescriptionText {
+  font-size: 18px;
+  align-self: start;
+}
+
+#profileCardPrice {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+#profileCardLocation {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#profileCardServiceChips {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#profileCardSpecializationChips {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/*
+
+#links {
+  grid-column: 1;
+  grid-row: 3;
+}
+*/
+#seeAvailabilityButton {
+  grid-column: 3;
+  justify-self: end;
+  grid-row: 4;
+}
+
+#profileCardLinkIcon {
+  width: 30px;
+  length: 30px;
+}
+
+#profileCardLinkIcon:hover {
+  width: 32px;
+  length: 32px;
+}

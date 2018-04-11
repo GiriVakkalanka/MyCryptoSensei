@@ -1,0 +1,9 @@
+#profilePageContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding-top: 100px;
+}
+
+#profilePageHeader {
+  grid-column: 1/3;
+}

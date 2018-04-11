@@ -1,7 +1,6 @@
 #hitContainer {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-
   border: solid 5px #212121;
   border-radius: 5px;
   margin-left: 120px;

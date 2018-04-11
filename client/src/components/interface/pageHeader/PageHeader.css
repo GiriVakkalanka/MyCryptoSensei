@@ -1,0 +1,27 @@
+#pageHeaderContainer {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  border-bottom: solid 5px #212121;
+  justify-items: end;
+  align-items: end;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  text-align: right;
+  font-family: 'Rubik', sans-serif;
+  font-size: 56px;
+}
+
+#pageHeaderIconDiv {
+  grid-column: 2;
+  grid-row: 1;
+}
+#pageHeaderTitleDiv {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 30px;
+}
+
+#pageHeaderIcon {
+  width: 100px;
+  height: 100px;
+}

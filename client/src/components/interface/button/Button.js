@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
-import { Card, Segment, Grid, Header, Icon } from 'semantic-ui-react';
+import { Card, Segment, Grid, Header, Modal } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './Button.css';
 
@@ -32,12 +32,26 @@ class Button extends Component {
       </a>
     );
   }
+
+  renderModalButton() {
+    return (
+      <Modal
+        size="small"
+        trigger={<button id="buttonContainer">{this.props.label}</button>}
+      >
+        <Modal.Content>{this.props.content}</Modal.Content>
+      </Modal>
+    );
+  }
+
   renderButton() {
     switch (this.props.type) {
       case 'link':
         return this.renderLinkButton();
       case 'login':
         return this.renderLoginButton();
+      case 'modal':
+        return this.renderModalButton();
       default:
         return this.renderNormalButton();
     }

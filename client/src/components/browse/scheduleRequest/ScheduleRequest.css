@@ -16,6 +16,8 @@
 }
 
 #scheduleRequestTimeSelector {
+  text-align: right;
+  padding: 10px;
   grid-column: 2;
   border: solid 5px #212121;
   border-radius: 5px;

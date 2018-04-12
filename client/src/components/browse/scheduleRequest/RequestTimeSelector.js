@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 //import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
-import { Button, Segment, Header, Modal } from 'semantic-ui-react';
+import { Segment, Header, Modal } from 'semantic-ui-react';
 import MakeRequest from './MakeRequest';
+import Button from '../../interface/button/Button';
+import './RequestTimeSelector.css';
 
 import moment from 'moment';
 
@@ -58,23 +60,37 @@ class RequestTimeSelector extends Component {
 
   render() {
     return (
-      <Segment compact>
-        <Header>
-          <Header.Subheader>Request an hour-long session on</Header.Subheader>
-          {moment(this.props.selectedWindow.date).format('dddd, MMMM Do YYYY')}
-        </Header>
-        <Header>
-          <Header.Subheader>Any time between</Header.Subheader>
-          {moment(this.props.selectedWindow.startTime).format(
-            'h:mm A'
-          )} and {moment(this.props.selectedWindow.endTime).format('h:mm A')}
-        </Header>
+      <div id="requestTimeSelectorContainer">
+        <p>Request an hour-long session on</p>
+
+        <div>
+          <p id="requestDate">
+            {moment(this.props.selectedWindow.date).format(
+              'dddd, MMMM Do YYYY'
+            )}
+          </p>
+        </div>
+        <p>Choose a time between</p>
+        <div id="requestDate">
+          <p>
+            {moment(this.props.selectedWindow.startTime).format('h:mm A')} and{' '}
+            {moment(this.props.selectedWindow.endTime).format('h:mm A')}
+          </p>
+        </div>
         <TimePicker
           hintText="Select time here"
           onChange={(event, time) => this.handleTime(event, time, false)}
+          dialogBodyStyle={{ backgroundColor: '#ffea00' }}
+          textFieldStyle={{ color: '#212121' }}
         />
-        <div>{this.renderModalButton()}</div>
-      </Segment>
+        <div>
+          <Button
+            type="modal"
+            label="Request Session"
+            content={<MakeRequest />}
+          />
+        </div>
+      </div>
     );
   }
 }

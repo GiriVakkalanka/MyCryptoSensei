@@ -17,24 +17,21 @@
   transform: scale(1.05);
 }
 
-#availableOnLabel {
-  grid-column: 2;
-  grid-row: 1;
-}
-
 #availableDate {
-  grid-column: 2;
-  grid-row: 2;
   font-size: 26px;
 }
 
 #availableWindow {
-  grid-column: 2;
-  grid-row: 4;
   font-size: 26px;
 }
 
-#fromLabel {
+#requestWindowListItemIcon {
+  grid-column: 1;
+
+  height: 33%;
+  width: 33%;
+}
+
+#requestWindowListItemInfo {
   grid-column: 2;
-  grid-row: 3;
 }

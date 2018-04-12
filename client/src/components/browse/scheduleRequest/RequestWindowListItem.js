@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
-import { Header, Icon, Item } from 'semantic-ui-react';
+import { Header, Item } from 'semantic-ui-react';
 import moment from 'moment';
 import Button from '../../interface/button/Button';
+import Icon from '../../interface/icon/Icon';
+import Calendar from '../../../images/Calendar.png';
 import './RequestWindowListItem.css';
 
 class RequestWindowListItem extends Component {
@@ -23,20 +25,25 @@ class RequestWindowListItem extends Component {
         className="fadeInLeftBig"
         onClick={() => this.handleClick()}
       >
-        <div id="availableOnLabel">
-          <p>Available on</p>
+        <div>
+          <Icon type="calendar" />
         </div>
-        <div id="availableDate">
-          <p>{moment(this.props.date).format('dddd, MMMM Do YYYY')}</p>
-        </div>
-        <div id="fromLabel">
-          <p>From</p>
-        </div>
-        <div id="availableWindow">
-          <p>
-            {moment(this.props.startTime).format('h:mm A')} to{' '}
-            {moment(this.props.endTime).format('h:mm A')}
-          </p>
+        <div id="requestWindowListItemInfo">
+          <div id="availableOnLabel">
+            <p>Available on</p>
+          </div>
+          <div id="availableDate">
+            <p>{moment(this.props.date).format('dddd, MMMM Do YYYY')}</p>
+          </div>
+          <div id="fromLabel">
+            <p>From</p>
+          </div>
+          <div id="availableWindow">
+            <p>
+              {moment(this.props.startTime).format('h:mm A')} to{' '}
+              {moment(this.props.endTime).format('h:mm A')}
+            </p>
+          </div>
         </div>
       </div>
     );

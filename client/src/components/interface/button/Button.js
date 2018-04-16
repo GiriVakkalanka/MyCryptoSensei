@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 import { Card, Segment, Grid, Header, Modal } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import Login from '../../apply/Login';
 import './Button.css';
 
 class Button extends Component {
@@ -25,12 +26,16 @@ class Button extends Component {
     );
   }
 
+  // renderLoginButton() {
+  //   return (
+  //     <a href="/auth/google">
+  //       <button id="buttonContainer">{this.props.label}</button>
+  //     </a>
+  //   );
+  // }
+
   renderLoginButton() {
-    return (
-      <a href="/auth/google">
-        <button id="buttonContainer">{this.props.label}</button>
-      </a>
-    );
+    return this.renderModalButton();
   }
 
   renderModalButton() {
@@ -52,6 +57,8 @@ class Button extends Component {
         return this.renderLoginButton();
       case 'modal':
         return this.renderModalButton();
+      case 'login':
+        return this.renderLoginButton();
       default:
         return this.renderNormalButton();
     }

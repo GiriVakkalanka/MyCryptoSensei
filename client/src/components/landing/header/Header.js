@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 import './Header.css';
 import Button from '../../interface/button/Button';
+import Login from '../../apply/Login';
 
 class Header extends Component {
   render() {
@@ -14,7 +15,7 @@ class Header extends Component {
             <p>MyCryptoSensei</p>
           </div>
           <div id="headerLoginButton">
-            <Button type="login" label="Log in" />
+            <Button type="login" content={<Login />} label="Log in" />
           </div>
         </div>
       </nav>

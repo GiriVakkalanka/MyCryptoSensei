@@ -12,10 +12,10 @@ class Header extends Component {
       <nav>
         <div id="header">
           <div id="logo">
-            <p>MyCryptoSensei</p>
+            <p>LIRIQ</p>
           </div>
           <div id="headerLoginButton">
-            <Button type="login" content={<Login />} label="Log in" />
+            <Button type="user" content={<Login />} label="Log in" />
           </div>
         </div>
       </nav>

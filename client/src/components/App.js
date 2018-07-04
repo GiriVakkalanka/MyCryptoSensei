@@ -34,6 +34,7 @@ import SessionsWrapper from './dashboard/SessionsWrapper';
 import Landing from './landing/Landing';
 import './style.css';
 import Header from './landing/header/Header';
+import Canvas from './canvas/Canvas';
 
 //NavHeader component goes before all of the routes.
 // root route was BrowseWrapper
@@ -96,6 +97,7 @@ class App extends Component {
             <Route exact path="/browse" component={BrowseWrapper} />
             <Route path="/sensei/:senseiId" component={ProfilePageWrapper} />
             <Route path="/session/:sessionId" component={SessionWrapper} />
+            <Route path="/canvas" component={Canvas} />
           </div>
         </BrowserRouter>
       </div>

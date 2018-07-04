@@ -1,0 +1,76 @@
+#loginMenuItemContainer {
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: #9e9e9e;
+}
+
+#loginMenuItemContainer:hover {
+  text-decoration: underline;
+  color: #00897b;
+}
+
+#sideMenuItemContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: #00897b;
+}
+
+#selectedSideMenuItemContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #006064;
+
+  border-radius: 3px;
+  box-shadow: 0px 0.1px 0.1px #212121;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: #00897b;
+}
+
+#sideMenuItemText {
+  grid-column: 2;
+  justify-self: start;
+  margin-left: 10px;
+}
+
+#selectedSideMenuItemText {
+  grid-column: 2;
+  justify-self: start;
+  margin-left: 10px;
+  color: white;
+}
+
+#genericIcon {
+  grid-column: 1;
+  justify-self: end;
+}
+
+#selectedGenericIcon {
+  grid-column: 1;
+  justify-self: end;
+  color: white;
+}
+
+#sideMenuItemContainer:hover {
+  text-decoration: underline;
+}
